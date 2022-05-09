@@ -37,11 +37,14 @@ type_ varchar(100)
 
 drop table users;
 drop table reimburse;
-
-
-
-
-
-
-
-
+select * from reimburse;
+select * from users;
+select * from user_roles;
+insert into user_roles (role_des) values ('manager') ,('user');
+insert into reimbursement_status (status) values (pending),(resolved);
+insert into reimbursement_type(type_) values (approve),(deny),;
+create or replace procedure create_user(a varchar(64), b varchar(64), c varchar(64), d varchar(64), e varchar(64), f int) as $$
+begin
+	insert into users(username, password, first_name, last_name, email, role_) values(a, b, c, d, e, f);
+end; $$ language 'plpgsql';
+insert into users (username, password, first_name, last_name, email, role_) values ('ag','ag','ag','ag','ag',2);
