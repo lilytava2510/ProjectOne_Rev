@@ -48,3 +48,6 @@ begin
 	insert into users(username, password, first_name, last_name, email, role_) values(a, b, c, d, e, f);
 end; $$ language 'plpgsql';
 insert into users (username, password, first_name, last_name, email, role_) values ('ag','ag','ag','ag','ag',2);
+update users set username = 'bunny', password = 'turtle', first_name = 'aggy', last_name = 'kie', email = 'ag@g', role_ = 1 where user_id = 1;
+delete from users where user_id = 3;
+select * from users where user_id = 1;

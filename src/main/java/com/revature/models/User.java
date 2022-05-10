@@ -21,7 +21,17 @@ public class User {
 
 
     }
-  public User(int userId, String password, String firstname, String lastname, String email){
+
+    public User(String username, String password, String firstName, String lastName, String email, boolean privilege) {
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.privilege = privilege;
+    }
+
+    public User(int userId, String password, String firstname, String lastname, String email){
         this.userId = userId;
         this.password = password;
         this.firstName = firstname;

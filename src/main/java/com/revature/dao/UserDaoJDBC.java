@@ -3,10 +3,7 @@ package com.revature.dao;
 import com.revature.models.User;
 import com.revature.utils.ConnectionSingleton;
 
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class UserDaoJDBC implements IUserDao {
 
@@ -30,19 +27,81 @@ public class UserDaoJDBC implements IUserDao {
             c.setAutoCommit(true);
         }catch(SQLException e){e.printStackTrace();}
     }
-//    public void createUser(User u) {
-//
-//        Connection c = cs.getConnection();
-//
-//        String sql = "insert into users (firstname, lastname, username, email, password) values " +
-//                "('" + u.getFirstName() +"','" + u.getLastName() + "','" + u.getUsername() + "','" + u.getEmail() +"','" + u.getPassword() + "')";
-//
-//        try {
-//            Statement s = c.createStatement();
-//            s.execute(sql);
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
+
+    public User getUserById(int id){
+        Connection c = cs.getConnection();
+        String sql = "select * from users where user_id = ?";
+        User user = new User();
+        try{
+            PreparedStatement p = c.prepareStatement(sql);
+            p.setInt(1, id);
+            ResultSet rs = p.executeQuery();
+            while(rs.next()){
+                user.setUserId(rs.getInt(1));
+                user.setUsername(rs.getString(2));
+                user.setPassword(rs.getString(3));
+                user.setFirstName(rs.getString(4));
+                user.setLastName(rs.getString(5));
+                user.setEmail(rs.getString(6));
+                if(rs.getBoolean(7)){
+                    user.setPrivilege(true);
+                }else{user.setPrivilege(false);}
+            }
+        }catch(SQLException e){e.printStackTrace();}
+        return user;
+    }
+
+    public User updateUser(User user){
+        Connection c = cs.getConnection();
+        String sql = "update users set username = ?, password = ?, first_name = ?, last_name = ?, email = ?, role_ = ?, where user_id = ?";
+        try{
+            PreparedStatement p = c.prepareStatement(sql);
+            p.setString(1, user.getUsername());
+            p.setString(2, user.getPassword());
+            p.setString(3, user.getFirstName());
+            p.setString(4, user.getLastName());
+            p.setString(5, user.getEmail());
+            p.setBoolean(6, user.isPrivilege());
+            p.setInt(7, user.getUserId());
+            p.execute();
+        }catch(SQLException e){e.printStackTrace();}
+
+        return user;
+    }
+
+    public void deleteUser(int id){
+        Connection c = cs.getConnection();
+        String sql = "delete from users where user_id = ?";
+        try{
+            PreparedStatement p = c.prepareStatement(sql);
+            p.setInt(1, id);
+            p.execute();
+        }catch(SQLException e){e.printStackTrace();}
+    }
+
+    public User login(String users, String password){
+        Connection c = cs.getConnection();
+        String sql = "select * from users where username = ? and password = ?";
+        User user = new User();
+        try{
+            PreparedStatement p = c.prepareStatement(sql);
+            p.setString(1, users);
+            p.setString(2, password);
+            ResultSet rs = p.executeQuery();
+            while(rs.next()){
+                user.setUserId(rs.getInt(1));
+                user.setUsername(rs.getString(2));
+                user.setPassword(rs.getString(3));
+                user.setFirstName(rs.getString(4));
+                user.setLastName(rs.getString(5));
+                user.setEmail(rs.getString(6));
+                if(rs.getBoolean(7)){
+                    user.setPrivilege(true);
+                }else{user.setPrivilege(false);}
+            }
+        }catch(SQLException e){e.printStackTrace();}
+        return user;
+    }
 
     }
 

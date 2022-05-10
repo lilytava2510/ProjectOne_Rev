@@ -25,7 +25,7 @@ public static void main(String[] args ) {
     {
         config.enableCorsForAllOrigins();
     });
-    us.registerUser("bob", "guy", "job", "@job", "pass");
+    us.registerUser("bob1", "guy1", "job1", "@job1", "pass", true);
 //    server.routes(()-> {
 //        path("users", () -> {
 //            post("/register", uc.handleRegister);
