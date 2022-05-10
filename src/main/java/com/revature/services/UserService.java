@@ -12,25 +12,37 @@ public class UserService {
 
     }
 
-    public void registerUser(String first, String last, String username ,String email, String password) {
-        User register = new User(0, first, last,username, email, password);
+    public void registerUser(String first, String last, String username, String email, String password) {
+        User register = new User(0, first, last, username, email, password );
         ud.createUser(register);
     }
 
+
+
     public User loginUser(String email, String password) {
 
-        User u = ud.readUserByEmail(email);
+        User u = ud.loginUser(email,password);
 
-        if (u != null) {
-            if (password.equals(u.getPassword())) {
 
                 return u;
-            } else {
-
-                return null;
             }
-        }
 
 
-        return null;
+  //  public User logout(String email, String password) {
+
+      //  User u = ud.loginUser(email,password);
+
+
+     //   return u;
+  //  }
+
+
+    public User updateUserInfo(User u) {
+        return ud.updateUser(u);
     }
+
+    public void deleteUser(User u) {
+        ud.deleteUser(u);
+    }
+}
+

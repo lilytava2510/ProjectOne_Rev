@@ -8,7 +8,7 @@ public class LoginObject {
 
     @Override
     public String toString() {
-        return "RegisterObject{" +
+        return "LoginObject{" +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 '}';

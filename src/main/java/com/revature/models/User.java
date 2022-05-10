@@ -14,17 +14,20 @@ public class User {
 
     private String email;
 
+    private boolean privilege = false;
+
     public User() {
 
 
 
     }
-  public User(int userId, String password, String firstname, String lastname, String email){
+  public User(int userId, String password, String firstname, String lastname, String email, boolean privilege){
         this.userId = userId;
         this.password = password;
         this.firstName = firstname;
         this.lastName=lastname;
         this.email=email;
+        this.privilege=privilege;
 
   }
     public User(int userId, String username, String password, String firstname, String lastname, String email){
@@ -76,6 +79,13 @@ public int getUserId(){
 
     public void setEmail(String email){
         this.email = email;
+    }
+
+    public boolean isPrivilege() {
+        return privilege;
+    }
+    public void setPrivilege(boolean privilege){
+        this.privilege=privilege;
     }
 
     @Override

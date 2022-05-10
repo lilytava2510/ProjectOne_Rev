@@ -17,10 +17,11 @@ public class Driver {
 public static void main(String[] args ) {
     Connection c = ConnectionSingleton.getConnectionSingleton().getConnection();
     IUserDao ud = new UserDaoJDBC();
+
     //TransactionService ps = new TransactionService();
     UserService us = new UserService(ud);
     UserController uc = new UserController(us);
-
+   // us.registerUser("charly", "charles", "tt", "@gmail", "passwprd");
     Javalin server = Javalin.create(config ->
     {
         config.enableCorsForAllOrigins();
@@ -30,8 +31,14 @@ public static void main(String[] args ) {
         path("users", () -> {
             post("/register", uc.handleRegister);
             post("/login", uc.handleLogin);
-            put("/", uc.handleUpdateUser);
-            delete("/{id}", uc.handleDeleteUser);
+           // get("/logout", uc.handlelogout); {
+
+
+
+
+
+            //put("/", uc.handleUpdateUser);
+            //delete("/{id}", uc.handleDeleteUser);
             //   get("/follow/{id}", uc.handleFollowUser);
             //   get("/full", uc.handleFullUserObject);
         });
@@ -43,6 +50,5 @@ public static void main(String[] args ) {
 }}
 
 
-}
 
-}
+

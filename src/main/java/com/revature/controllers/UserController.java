@@ -44,3 +44,18 @@ public class UserController {
             ctx.result(om.writeValueAsString(u));
         }
     };
+
+    public Handler handleUpdateUser = (ctx) -> {
+        User u = om.readValue(ctx.body(), User.class);
+
+        System.out.println(u);
+
+        ctx.result(om.writeValueAsString(us.updateUserInfo(u)));
+    };
+    public Handler handleDeleteUser = (ctx)-> {
+        int id = Integer.parseInt(ctx.pathParam("id"));
+        User u = new User();
+        u.setUserId(id);
+        us.deleteUser(u);
+        ctx.result("User was deleted");
+    };};
