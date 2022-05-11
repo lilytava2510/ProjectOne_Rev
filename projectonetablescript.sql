@@ -1,6 +1,6 @@
 create table reimburse(
       reimburse_id int primary key generated always as identity,
-      amount int,
+      amount decimal(6,2),
       submitted_date date,
       resolve_date date,
       description varchar(200),
@@ -40,14 +40,23 @@ drop table reimburse;
 select * from reimburse;
 select * from users;
 select * from user_roles;
+select * from reimbursement_status;
+select * from reimbursement_type;
+insert into reimbursement_status (status) values ('pending'),('approved'),('denied');
 insert into user_roles (role_des) values ('manager') ,('user');
-insert into reimbursement_status (status) values (pending),(resolved);
-insert into reimbursement_type(type_) values (approve),(deny),;
+insert into reimbursement_type(type_) values ('lodging'),('travel'),('food'),('other');
 create or replace procedure create_user(a varchar(64), b varchar(64), c varchar(64), d varchar(64), e varchar(64), f int) as $$
 begin
 	insert into users(username, password, first_name, last_name, email, role_) values(a, b, c, d, e, f);
 end; $$ language 'plpgsql';
+create or replace procedure create_reimburse(a decimal(6,2), b date, c date, d varchar(200), e int, f int, g int, h int) as $$
+begin
+	insert into reimburse(amount, submitted_date, resolve_date, description, reimburse_author, resolver, reimburse_status, reimburse_type) values(a, b, c, d, e, f, g, h);
+end; $$ language 'plpgsql';
 insert into users (username, password, first_name, last_name, email, role_) values ('ag','ag','ag','ag','ag',2);
-update users set username = 'bunny', password = 'turtle', first_name = 'aggy', last_name = 'kie', email = 'ag@g', role_ = 1 where user_id = 1;
+update users set username = 'ag', password = 'ag', first_name = 'peggy', last_name = 'lew', email = 'p@g', role_ = 1 where user_id = 1;
 delete from users where user_id = 3;
 select * from users where user_id = 1;
+select * from users where username = 'bunny' and password = 'turtle';
+insert into reimburse(amount, submitted_date, resolve_date, description, reimburse_author, resolver, reimburse_status, reimburse_type) values( 1.0, null, null, 'stuff', 1, 1, 1, 1);
+select * from reimburse where reimburse_author = ?;

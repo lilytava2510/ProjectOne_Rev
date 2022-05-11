@@ -53,18 +53,25 @@ public class UserDaoJDBC implements IUserDao {
 
     public User updateUser(User user){
         Connection c = cs.getConnection();
-        String sql = "update users set username = ?, password = ?, first_name = ?, last_name = ?, email = ?, role_ = ?, where user_id = ?";
+        String sql = "update users set username = ?, password = ?, first_name = ?, last_name = ?, email = ?, role_ = ? where user_id = ?";
+        int x = 0;
         try{
+            if(user.isPrivilege()){ x=1;}else{x=2;}
+            c.setAutoCommit(false);
             PreparedStatement p = c.prepareStatement(sql);
             p.setString(1, user.getUsername());
             p.setString(2, user.getPassword());
             p.setString(3, user.getFirstName());
             p.setString(4, user.getLastName());
             p.setString(5, user.getEmail());
-            p.setBoolean(6, user.isPrivilege());
+            p.setInt(6, x);
             p.setInt(7, user.getUserId());
             p.execute();
-        }catch(SQLException e){e.printStackTrace();}
+            c.setAutoCommit(true);
+        }catch(SQLException e){
+            e.printStackTrace();
+            return null;
+        }
 
         return user;
     }

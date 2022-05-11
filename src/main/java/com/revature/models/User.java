@@ -1,5 +1,8 @@
 package com.revature.models;
 
+import java.util.SortedSet;
+import java.util.TreeSet;
+
 public class User {
 
     private int userId;
@@ -15,6 +18,8 @@ public class User {
     private String email;
 
     private boolean privilege = false;
+
+    private SortedSet<Reimburse> history = new TreeSet<>();
 
     public User() {
 
@@ -48,7 +53,11 @@ public class User {
         this.email=email;
 }
 
-public int getUserId(){
+    public User(int userId) {
+        this.userId = userId;
+    }
+
+    public int getUserId(){
     return userId;
     }
 
