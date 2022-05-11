@@ -5,10 +5,10 @@ import com.revature.utils.ConnectionSingleton;
 
 import java.sql.*;
 
-public class UserDaoJDBC implements IUserDao {
+public class UserDaoJDBC {
 
     ConnectionSingleton cs = ConnectionSingleton.getConnectionSingleton();
-    @Override
+
     public void createUser(User user){
         Connection c = cs.getConnection();
         String sql = "call create_user(?,?,?,?,?,?)";
@@ -44,6 +44,29 @@ public class UserDaoJDBC implements IUserDao {
                 user.setLastName(rs.getString(5));
                 user.setEmail(rs.getString(6));
                 if(rs.getBoolean(7)){
+                    user.setPrivilege(true);
+                }else{user.setPrivilege(false);}
+            }
+        }catch(SQLException e){e.printStackTrace();}
+        return user;
+    }
+
+    public User readUserByEmail(String email){
+        Connection c = cs.getConnection();
+        String sql = "select * from users where email = ?";
+        User user = new User();
+        try{
+            PreparedStatement p = c.prepareStatement(sql);
+            p.setString(1, email);
+            ResultSet rs = p.executeQuery();
+            while(rs.next()){
+                user.setUserId(rs.getInt(1));
+                user.setUsername(rs.getString(2));
+                user.setPassword(rs.getString(3));
+                user.setFirstName(rs.getString(4));
+                user.setLastName(rs.getString(5));
+                user.setEmail(rs.getString(6));
+                if(rs.getInt(7) == 1){
                     user.setPrivilege(true);
                 }else{user.setPrivilege(false);}
             }

@@ -1,0 +1,21 @@
+
+p
+java:S1104"ZMake handleRegister a static final constant or non-public and provide accessors if needed.(ÿ§¶
+t
+java:S1104!"WMake handleLogin a static final constant or non-public and provide accessors if needed.(Öª‰8’Çú§‹0
+y
+java:S11042"\Make handleUpdateUser a static final constant or non-public and provide accessors if needed.(¢ÓäŒ8’Çú§‹0
+y
+java:S1104:"\Make handleDeleteUser a static final constant or non-public and provide accessors if needed.(ÌØ†¿8’Çú§‹0
+G
+java:S1611"1Remove the parentheses around the "ctx" parameter(ÿ§¶
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Æµ¦ıÿÿÿÿ
+N
+java:S1611!"1Remove the parentheses around the "ctx" parameter(Öª‰8¢Çú§‹0
+N
+java:S16112"1Remove the parentheses around the "ctx" parameter(¢ÓäŒ8¤Çú§‹0
+U	java:S1065"9Replace this use of System.out or System.err by a logger.(Âæ“ú8¤Çú§‹0
+N
+java:S1611:"1Remove the parentheses around the "ctx" parameter(ÌØ†¿8¤Çú§‹0
+>
+java:S1116A"Remove this empty statement.(ôŸìúÿÿÿÿ8¥Çú§‹0

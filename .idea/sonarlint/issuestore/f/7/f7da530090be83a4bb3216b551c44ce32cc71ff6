@@ -1,0 +1,14 @@
+
+t
+java:S1104"RMake amount a static final constant or non-public and provide accessors if needed.(¶â¤·ıÿÿÿÿ8¼¡ÙÿŠ0
+s
+java:S1104	"VMake submission a static final constant or non-public and provide accessors if needed.(ø¾‹«8¼¡ÙÿŠ0
+y
+java:S1104
+"WMake description a static final constant or non-public and provide accessors if needed.(¹ÿ†ğÿÿÿÿÿ8¼¡ÙÿŠ0
+t
+java:S1104"RMake author a static final constant or non-public and provide accessors if needed.(×ìæ»øÿÿÿÿ8ò¦¨‹0
+t
+java:S1104"RMake status a static final constant or non-public and provide accessors if needed.(¥ß®üÿÿÿÿ8¼¡ÙÿŠ0
+m
+java:S1104"PMake type a static final constant or non-public and provide accessors if needed.(ûöå©8¼¡ÙÿŠ0

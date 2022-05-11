@@ -2,29 +2,23 @@ package com.revature;
 
 import com.revature.controllers.UserController;
 import com.revature.dao.IReimDaoJDBC;
-import com.revature.dao.IUserDao;
 import com.revature.dao.UserDaoJDBC;
 import com.revature.models.Reimburse;
 import com.revature.models.User;
 import com.revature.services.UserService;
 import com.revature.utils.ConnectionSingleton;
-import io.javalin.Javalin;
 
-import javax.print.attribute.standard.DateTimeAtCreation;
 import java.sql.Connection;
 import java.sql.Date;
-import java.util.Calendar;
 
-import static io.javalin.apibuilder.ApiBuilder.*;
 import static io.javalin.apibuilder.ApiBuilder.delete;
 
 public class Driver {
 
     public static void main(String[] args ) {
         Connection c = ConnectionSingleton.getConnectionSingleton().getConnection();
-        IUserDao ud = new UserDaoJDBC();
+        UserDaoJDBC ud = new UserDaoJDBC();
         IReimDaoJDBC rd = new IReimDaoJDBC();
-        //TransactionService ps = new TransactionService();
         UserService us = new UserService(ud);
         UserController uc = new UserController(us);
         Date d = new Date(2020-01-01);

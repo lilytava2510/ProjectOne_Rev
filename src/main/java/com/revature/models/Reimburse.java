@@ -40,6 +40,14 @@ public class Reimburse {
         this.resolution=resolution;
     }
 
+    public Reimburse(double amount, Date submission, String description, int author, int status, int type) {
+        this.amount = amount;
+        this.submission = submission;
+        this.description = description;
+        this.author = author;
+        this.status = status;
+        this.type = type;
+    }
 
     public int getReimburse_id() {
         return reimburse_id;

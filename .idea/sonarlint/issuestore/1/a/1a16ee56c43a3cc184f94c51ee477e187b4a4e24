@@ -1,0 +1,23 @@
+
+X
+java:S2184"CCast one of the operands of this subtraction operation to a "long".(ÿøÇ+
+Y
+java:S1854"7Remove this useless assignment to local variable "use".( ©†èýÿÿÿÿ8ë—òˆ‹0
+Q
+java:S1854"5Remove this useless assignment to local variable "d".(ÿøÇ+8ÄÊæ…‹0
+S
+java:S1854"6Remove this useless assignment to local variable "uc".(Ö¦°ÿ8æ„ÓŸ‹0
+P
+java:S1854"5Remove this useless assignment to local variable "c".(ÎüŒ…úÿÿÿÿ
+A
+java:S1481"&Remove this unused "c" local variable.(ÎüŒ…úÿÿÿÿ
+D
+java:S1481"'Remove this unused "uc" local variable.(Ö¦°ÿ8é„ÓŸ‹0
+B
+java:S1481"&Remove this unused "d" local variable.(ÿøÇ+8ÈÊæ…‹0
+J
+java:S1481"(Remove this unused "use" local variable.( ©†èýÿÿÿÿ8ë—òˆ‹0
+]	java:S125"<This block of commented-out lines of code should be removed.(šö„Êúÿÿÿÿ8Èôˆ‹0
+Q	java:S125"<This block of commented-out lines of code should be removed.(Ú°à¬
+V	java:S125#"<This block of commented-out lines of code should be removed.(è¯œÿùÿÿÿÿ
+V	java:S125>"<This block of commented-out lines of code should be removed.(×§ŠÕüÿÿÿÿ
