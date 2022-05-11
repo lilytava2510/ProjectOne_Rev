@@ -21,15 +21,23 @@ public class User {
 
 
     }
-  public User(int userId, String password, String firstname, String lastname, String email, boolean privilege){
+    public User(String username, String password, String firstName, String lastName, String email, boolean privilege) {
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.privilege = privilege;
+    }
+
+    public User(int userId, String password, String firstname, String lastname, String email){
         this.userId = userId;
         this.password = password;
         this.firstName = firstname;
         this.lastName=lastname;
         this.email=email;
-        this.privilege=privilege;
 
-  }
+    }
     public User(int userId, String username, String password, String firstname, String lastname, String email){
         this.userId = userId;
         this.username = username;
@@ -37,7 +45,7 @@ public class User {
         this.firstName = firstname;
         this.lastName=lastname;
         this.email=email;
-}
+    }
 
 public int getUserId(){
     return userId;
@@ -66,6 +74,7 @@ public int getUserId(){
     public void setFirstName(String firstName){
         this.firstName = firstName;
     }
+
     public String getLastName(){
         return lastName;
     }

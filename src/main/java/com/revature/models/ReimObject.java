@@ -5,7 +5,7 @@ import java.sql.Date;
 public class ReimObject {
 
 
- public double amount;
+ public int amount;
  public Date submission;
  public Date resolution;
  public String description;

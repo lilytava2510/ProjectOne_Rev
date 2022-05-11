@@ -6,7 +6,7 @@ public class Reimburse {
 
   private int reimburse_id;
 
-  private double amount;
+  private int amount;
   private Date submission;
   private Date resolution;
   private String description;
@@ -16,11 +16,11 @@ public class Reimburse {
   private int type;
 
 
-  public Reimburse() {
+  public Reimburse(int amount, Date submission, String description, int i, int i1) {
 
   }
 
-public Reimburse( double amount, Date submission, Date resolution, String description, User author, int type) {
+public Reimburse( int amount, Date submission, Date resolution, String description, User author, int type) {
  this.amount=amount;
   this.submission = submission;
   this.description =description;
@@ -28,7 +28,7 @@ public Reimburse( double amount, Date submission, Date resolution, String descri
   this.type=type;
 }
 
-  public Reimburse(int reimburse_id, double amount, Date submission, Date resolution, String description, User author, User manager, int status, int type) {
+  public Reimburse(int reimburse_id, int amount, Date submission, Date resolution, String description, User author, User manager, int status, int type) {
     this.amount=amount;
     this.reimburse_id = reimburse_id;
     this.submission = submission;
@@ -49,11 +49,11 @@ public Reimburse( double amount, Date submission, Date resolution, String descri
     this.reimburse_id = reimburse_id;
   }
 
-  public double getAmount() {
+  public int getAmount() {
     return amount;
   }
 
-  public void setAmount(double amount) {
+  public void setAmount(int amount) {
     this.amount = amount;
   }
 

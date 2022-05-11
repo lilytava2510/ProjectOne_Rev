@@ -31,6 +31,7 @@ public static void main(String[] args ) {
         path("users", () -> {
             post("/register", uc.handleRegister);
             post("/login", uc.handleLogin);
+            put("/", uc.handleUpdateUser);
            // get("/logout", uc.handlelogout); {
 
 
@@ -38,7 +39,7 @@ public static void main(String[] args ) {
 
 
             //put("/", uc.handleUpdateUser);
-            //delete("/{id}", uc.handleDeleteUser);
+            delete("/{id}", uc.handleDeleteUser);
             //   get("/follow/{id}", uc.handleFollowUser);
             //   get("/full", uc.handleFullUserObject);
         });

@@ -52,6 +52,7 @@ public class UserController {
 
         ctx.result(om.writeValueAsString(us.updateUserInfo(u)));
     };
+
     public Handler handleDeleteUser = (ctx)-> {
         int id = Integer.parseInt(ctx.pathParam("id"));
         User u = new User();
