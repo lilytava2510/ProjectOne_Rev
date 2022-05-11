@@ -1,10 +1,12 @@
 package com.revature.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.models.ReimObject;
 import com.revature.models.Reimburse;
 import com.revature.models.User;
 import com.revature.services.ReimService;
 import io.javalin.http.Handler;
+
 
 public class ReimController {
 
@@ -27,10 +29,11 @@ this.om = new ObjectMapper();
             int reimburserId = Integer.parseInt((String) ctx.req.getSession().getAttribute("id"));
 
             User u = new User();
-            u.setUserId(reimburserId);
 
-            Reimburse r = om.readValue(ctx.body(), Reimburse.class);
-            rs.addReimburse(r.getAmount(), r.getSubmission(), r.getDescription(), r.getAuthor(), r.getType());
+
+            ReimObject r = om.readValue(ctx.body(), ReimObject.class);
+            u.setUserId(r.author);
+            rs.addReimburse(r.amount, r.submission,r.description,u,r.type);
         }
 
     };

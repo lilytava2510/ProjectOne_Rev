@@ -24,5 +24,4 @@ public interface IUserDao {
 
     public void deleteUser(User u);
 
-    User loginUser(String users, String password);
 }

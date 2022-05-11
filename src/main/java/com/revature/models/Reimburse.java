@@ -15,12 +15,9 @@ public class Reimburse {
   private int status;
   private int type;
 
+  public Reimburse(){}
 
-  public Reimburse(int amount, Date submission, String description, int i, int i1) {
-
-  }
-
-public Reimburse( int amount, Date submission, Date resolution, String description, User author, int type) {
+public Reimburse( int amount, Date submission, String description, User author, int type) {
  this.amount=amount;
   this.submission = submission;
   this.description =description;

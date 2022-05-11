@@ -20,10 +20,11 @@ public void addReimburse(int amount, Date submission, String description, User a
 
      Date d = new Date(Instant.now().toEpochMilli());
 
-     Reimburse r = new Reimburse(amount,submission,description,0,0);
+     Reimburse r = new Reimburse(0,d,description,author,0);
      rd.createReimburseByUser(r);
      }
 }
+
 
 
        //Reimburse r = new Reimburse(0,d

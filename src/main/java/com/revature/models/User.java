@@ -36,7 +36,10 @@ public class User {
         this.firstName = firstname;
         this.lastName=lastname;
         this.email=email;
-
+    }
+    public User( String password, String email){
+            this.email = email;
+            this.password = password;
     }
     public User(int userId, String username, String password, String firstname, String lastname, String email){
         this.userId = userId;
@@ -47,7 +50,7 @@ public class User {
         this.email=email;
     }
 
-public int getUserId(){
+public int  getUserId(){
     return userId;
     }
 

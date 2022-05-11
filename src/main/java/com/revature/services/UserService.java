@@ -1,14 +1,17 @@
 package com.revature.services;
 
+import com.revature.dao.IReimDaoJDBC;
 import com.revature.dao.IUserDao;
 import com.revature.models.User;
 public class UserService {
 
     private IUserDao ud;
+    private IReimDaoJDBC rd;
 
 
-    public UserService(IUserDao ud) {
+    public UserService(IUserDao ud, IReimDaoJDBC rd) {
         this.ud = ud;
+        this.rd = rd;
 
     }
 
@@ -24,20 +27,25 @@ public class UserService {
 
     public User loginUser(String email, String password) {
 
-        User u = ud.loginUser(email,password);
+       User u = ud.readUserByEmail(email);
 
+        if(u != null){
+          if(password.equals(u.getPassword())){
 
-                return u;
-            }
+             return u;
+           } else {
 
+              return null;
+           }
+        }
 
   //  public User logout(String email, String password) {
 
       //  User u = ud.loginUser(email,password);
 
 
-     //   return u;
-  //  }
+      return null;
+   }
 
 
     public User updateUserInfo(User u) {

@@ -13,11 +13,11 @@ public class RegisterObject {
     @Override
     public String toString() {
         return "RegisterObject{" +
-                "first='" + first + '\'' +
-                ", last='" + last + '\'' +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
+                "username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", first='" + first + '\'' +
+                ", last='" + last + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 
