@@ -3,10 +3,10 @@ package com.revature.dao;
 import com.revature.models.Reimburse;
 import com.revature.models.User;
 import com.revature.utils.ConnectionSingleton;
-
 import java.sql.*;
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class IReimDaoJDBC {
 
@@ -31,10 +31,10 @@ public class IReimDaoJDBC {
         }catch(SQLException e){e.printStackTrace();}
     }
 
-    public TreeSet<Reimburse> getById(int id){
+    public List<Reimburse> getById(int id){
         Connection c =cs.getConnection();
         String sql = "select * from reimburse where reimburse_author = ?";
-        TreeSet<Reimburse> holder= new TreeSet<>();
+        List<Reimburse> holder= new ArrayList<>();
         try{
             PreparedStatement p = c.prepareStatement(sql);
             p.setInt(1, id);
@@ -77,10 +77,10 @@ public class IReimDaoJDBC {
         return r;
     }
 
-    public TreeSet<Reimburse> getApprovedById(int id){
+    public List<Reimburse> getApprovedById(int id){
         Connection c =cs.getConnection();
         String sql = "select * from reimburse where reimburse_author = ? and reimburse_status = 2";
-        TreeSet<Reimburse> holder= new TreeSet<>();
+        List<Reimburse> holder= new ArrayList<>();
         try{
             PreparedStatement p = c.prepareStatement(sql);
             p.setInt(1, id);
@@ -98,10 +98,10 @@ public class IReimDaoJDBC {
         return null;
     }
 
-    public TreeSet<Reimburse> getPendingById(int id){
+    public List<Reimburse> getPendingById(int id){
         Connection c =cs.getConnection();
         String sql = "select * from reimburse where reimburse_author = ? and reimburse_status = 1";
-        TreeSet<Reimburse> holder= new TreeSet<>();
+       List<Reimburse> holder= new ArrayList<>();
         try{
             PreparedStatement p = c.prepareStatement(sql);
             p.setInt(1, id);
@@ -119,10 +119,10 @@ public class IReimDaoJDBC {
         return null;
     }
 
-    public TreeSet<Reimburse> getAllApproved(){
+    public List<Reimburse> getAllApproved(){
         Connection c =cs.getConnection();
         String sql = "select * from reimburse where reimburse_status = 2";
-        TreeSet<Reimburse> holder= new TreeSet<>();
+        List<Reimburse> holder= new ArrayList<>();
         try{
             PreparedStatement p = c.prepareStatement(sql);
             ResultSet rs = p.executeQuery();
@@ -139,10 +139,10 @@ public class IReimDaoJDBC {
         return null;
     }
 
-    public TreeSet<Reimburse> getAllPending(){
+    public List<Reimburse> getAllPending(){
         Connection c =cs.getConnection();
         String sql = "select * from reimburse where reimburse_status = 1";
-        TreeSet<Reimburse> holder= new TreeSet<>();
+        List<Reimburse> holder= new ArrayList<>();
         try{
             PreparedStatement p = c.prepareStatement(sql);
             ResultSet rs = p.executeQuery();

@@ -1,19 +1,28 @@
 
 e
-java:S2095$"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±
+java:S2095&"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±
 e
-java:S2095u"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±
+java:S2095V"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±
 e
-java:S2095T"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±
+java:S2095w"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±
 e
-java:S2095"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Èáú”
+java:S2095="OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±
 e
-java:S2095;"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±
+java:S2095"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Èáú”
 e
-java:S2095j"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±
-]
-java:S1126."BReplace this if-then-else statement by a single method invocation.(ˆ‘«œşÿÿÿÿ
+java:S2095l"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±
+j
+java:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(©¸ººúÿÿÿÿ8‰†Ù®‹0
 X
-java:S1126E"BReplace this if-then-else statement by a single method invocation.(é»Úï
+java:S11260"BReplace this if-then-else statement by a single method invocation.(é»Úï
+X
+java:S1126G"BReplace this if-then-else statement by a single method invocation.(é»Úï
 ^
-java:S1126€"BReplace this if-then-else statement by a single method invocation.(ˆ‘«œşÿÿÿÿ
+java:S1126‚"BReplace this if-then-else statement by a single method invocation.(ˆ‘«œşÿÿÿÿ
+B
+java:S1168’"+Return an empty collection instead of null.(¥¹ï
+Y	java:S125–"<This block of commented-out lines of code should be removed.(’ÿÌİ8ÍÂë®‹0
+B
+java:S1168"+Return an empty collection instead of null.(¥¹ï
+\
+java:S1128":Remove this unused import 'com.revature.models.Reimburse'.(ÉõÙÔøÿÿÿÿ8¼Ç¥°‹0

@@ -1,9 +1,11 @@
 package com.revature.dao;
 
+import com.revature.models.Reimburse;
 import com.revature.models.User;
 import com.revature.utils.ConnectionSingleton;
-
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDaoJDBC {
 
@@ -43,7 +45,7 @@ public class UserDaoJDBC {
                 user.setFirstName(rs.getString(4));
                 user.setLastName(rs.getString(5));
                 user.setEmail(rs.getString(6));
-                if(rs.getBoolean(7)){
+                if(rs.getInt(7) == 1){
                     user.setPrivilege(true);
                 }else{user.setPrivilege(false);}
             }
@@ -132,6 +134,29 @@ public class UserDaoJDBC {
         }catch(SQLException e){e.printStackTrace();}
         return user;
     }
+
+    public List<User> readAllEmployees() {
+            Connection c =cs.getConnection();
+            String sql = "select * from users where role_ = 2";
+            List<User> holder= new ArrayList<>();
+            try{
+                Statement p = c.createStatement();
+                ResultSet rs = p.executeQuery(sql);
+                if(rs.wasNull()) {
+                    return null;
+                }else {
+                    while (rs.next()) {
+                        boolean x = false;
+                        //if(rs.getInt(7) == 1){x = true;}else{x = false;}
+                        User temp = new User(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), x);
+                        holder.add(temp);
+                    }
+                    return holder;
+                }
+            }catch(SQLException e){e.printStackTrace();}
+            return null;
+        }
+
 
     }
 

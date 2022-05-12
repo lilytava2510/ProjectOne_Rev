@@ -120,4 +120,21 @@ public class Reimburse {
     public void setType(int type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "reim{" +
+                "Id='" + reimburse_id + '\'' +
+                "amount='" + amount + '\'' +
+                ", date='" + submission + '\'' +
+                ", date='" + resolution + '\'' +
+                ", des='" + description + '\'' +
+                "au='" + author + '\'' +
+                ", ma='" + manager + '\'' +
+                ", st='" + status + '\'' +
+                ", ty='" + type + '\'' +
+
+
+                '}';
+    }
 }

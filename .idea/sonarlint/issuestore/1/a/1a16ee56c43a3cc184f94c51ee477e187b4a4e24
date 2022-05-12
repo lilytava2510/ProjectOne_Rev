@@ -1,23 +1,44 @@
 
-X
-java:S2184"CCast one of the operands of this subtraction operation to a "long".(ÿøÇ+
-Y
-java:S1854"7Remove this useless assignment to local variable "use".( ©†èýÿÿÿÿ8ë—òˆ‹0
-Q
-java:S1854"5Remove this useless assignment to local variable "d".(ÿøÇ+8ÄÊæ…‹0
+L
+java:S1854"6Remove this useless assignment to local variable "uc".(Ö¦°ÿ
 S
-java:S1854"6Remove this useless assignment to local variable "uc".(Ö¦°ÿ8æ„ÓŸ‹0
+java:S1854"6Remove this useless assignment to local variable "rs".(¿±½±8•ÁÇÃ‹0
 P
-java:S1854"5Remove this useless assignment to local variable "c".(ÎüŒ…úÿÿÿÿ
+java:S1854"5Remove this useless assignment to local variable "c".(ÎüŒ…úÿÿÿÿ
 A
-java:S1481"&Remove this unused "c" local variable.(ÎüŒ…úÿÿÿÿ
+java:S1481"&Remove this unused "c" local variable.(ÎüŒ…úÿÿÿÿ
 D
-java:S1481"'Remove this unused "uc" local variable.(Ö¦°ÿ8é„ÓŸ‹0
-B
-java:S1481"&Remove this unused "d" local variable.(ÿøÇ+8ÈÊæ…‹0
-J
-java:S1481"(Remove this unused "use" local variable.( ©†èýÿÿÿÿ8ë—òˆ‹0
-]	java:S125"<This block of commented-out lines of code should be removed.(šö„Êúÿÿÿÿ8Èôˆ‹0
-Q	java:S125"<This block of commented-out lines of code should be removed.(Ú°à¬
-V	java:S125#"<This block of commented-out lines of code should be removed.(è¯œÿùÿÿÿÿ
-V	java:S125>"<This block of commented-out lines of code should be removed.(×§ŠÕüÿÿÿÿ
+java:S1481"'Remove this unused "rs" local variable.(¿±½±8—ÁÇÃ‹0
+=
+java:S1481"'Remove this unused "uc" local variable.(Ö¦°ÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(œ”†€
+X	java:S125"<This block of commented-out lines of code should be removed.(ÒµÎ’8üèæÃ‹0
+X	java:S125"<This block of commented-out lines of code should be removed.(¸à˜8ÊÃ‹0
+]	java:S125 "<This block of commented-out lines of code should be removed.(È¾Ó÷ýÿÿÿÿ8ÊÃ‹0
+]	java:S125""<This block of commented-out lines of code should be removed.(ê²”Õüÿÿÿÿ8ÊÃ‹0
+]	java:S125$"<This block of commented-out lines of code should be removed.(õõÎ½þÿÿÿÿ8‘ÊÃ‹0
+X	java:S125&"<This block of commented-out lines of code should be removed.(ŽÁÿÖ8Ý¿âÃ‹0
+V	java:S125("<This block of commented-out lines of code should be removed.(¾¹ƒ÷þÿÿÿÿ
+]	java:S125."<This block of commented-out lines of code should be removed.(¶ú§­ùÿÿÿÿ8ˆþš°‹0
+]	java:S1250"<This block of commented-out lines of code should be removed.(˜ºªìüÿÿÿÿ8¢ëš°‹0
+X	java:S1253"<This block of commented-out lines of code should be removed.(«Ûž8ºøô°‹0
+X	java:S1255"<This block of commented-out lines of code should be removed.(–ÃÆˆ8Æ·š°‹0
+Q	java:S1258"<This block of commented-out lines of code should be removed.(·‘›è
+X	java:S125:"<This block of commented-out lines of code should be removed.(ªÉíž8œÁÇÃ‹0
+X	java:S125@"<This block of commented-out lines of code should be removed.( ÃŸ×8¾©âÃ‹0
+Q	java:S125D"<This block of commented-out lines of code should be removed.(°èœ›
+X	java:S125F"<This block of commented-out lines of code should be removed.( ‹È¥8¡ÌæÃ‹0
+]	java:S125H"<This block of commented-out lines of code should be removed.(¬‡âïúÿÿÿÿ8òƒÝÃ‹0
+V	java:S125J"<This block of commented-out lines of code should be removed.(Æµ­Äüÿÿÿÿ
+X	java:S125L"<This block of commented-out lines of code should be removed.(ï¿è’8“³ÚÃ‹0
+Q	java:S125Q"<This block of commented-out lines of code should be removed.(Ú°à¬
+V	java:S125U"<This block of commented-out lines of code should be removed.(è¯œÿùÿÿÿÿ
+V	java:S125p"<This block of commented-out lines of code should be removed.(×§ŠÕüÿÿÿÿ
+\
+java:S1128":Remove this unused import 'com.revature.models.Reimburse'.(ÉõÙÔøÿÿÿÿ8ÿ£îÃ‹0
+W
+java:S1128"5Remove this unused import 'com.revature.models.User'.(òÒš»ûÿÿÿÿ8ÿ£îÃ‹0
+G
+java:S1128"*Remove this unused import 'java.sql.Date'.(ÙÀ½Ê8ÿ£îÃ‹0
+f
+java:S1128"DRemove this unused import 'io.javalin.apibuilder.ApiBuilder.delete'.(ïÖº®üÿÿÿÿ8€¤îÃ‹0

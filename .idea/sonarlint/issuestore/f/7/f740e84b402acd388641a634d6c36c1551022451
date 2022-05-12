@@ -1,45 +1,37 @@
 
-‰
-java:S1319""sThe return type of this method should be an interface such as "SortedSet" rather than the implementation "TreeSet".(ÂóŸ
-
-java:S1319P"sThe return type of this method should be an interface such as "SortedSet" rather than the implementation "TreeSet".(¯¦ï®8îÏ›‰‹0
-•
-java:S1319e"sThe return type of this method should be an interface such as "SortedSet" rather than the implementation "TreeSet".(«¦•ºûÿÿÿÿ8ÙÇ¡‰‹0
-•
-java:S1319z"sThe return type of this method should be an interface such as "SortedSet" rather than the implementation "TreeSet".(Ò°éöùÿÿÿÿ8Æ¶¨‰‹0
-–
-java:S1319"sThe return type of this method should be an interface such as "SortedSet" rather than the implementation "TreeSet".(¢û¢şÿÿÿÿ8÷õ´‰‹0
+l
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±8˜»™‰‹0
+e
+java:S2095"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Èáú”
+l
+java:S2095U"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±8ÿÖ ‰‹0
 e
 java:S2095<"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±
 l
-java:S2095U"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±8ÿÖ ‰‹0
-l
-java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±8˜»™‰‹0
-l
 java:S2095j"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±8ıÎ´‰‹0
-e
-java:S2095"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Èáú”
 l
 java:S2095'"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±8¹Ó§‰‹0
 f
 java:S2095“"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±
-A
-java:S1168+"+Return an empty collection instead of null.(¥¹ï
-A
-java:S11684"+Return an empty collection instead of null.(¥¹ï
 H
-java:S1168Y"+Return an empty collection instead of null.(¥¹ï8Ğ›‰‹0
+java:S1168+"+Return an empty collection instead of null.(¥¹ï8ªÑ©®‹0
 H
-java:S1168b"+Return an empty collection instead of null.(¥¹ï8Ğ›‰‹0
+java:S11684"+Return an empty collection instead of null.(¥¹ï8ªÑ©®‹0
 H
-java:S1168n"+Return an empty collection instead of null.(¥¹ï8ïÇ¡‰‹0
+java:S1168Y"+Return an empty collection instead of null.(¥¹ï8ªÑ©®‹0
 H
-java:S1168w"+Return an empty collection instead of null.(¥¹ï8ÿÇ¡‰‹0
+java:S1168b"+Return an empty collection instead of null.(¥¹ï8ªÑ©®‹0
+H
+java:S1168n"+Return an empty collection instead of null.(¥¹ï8ªÑ©®‹0
+H
+java:S1168w"+Return an empty collection instead of null.(¥¹ï8ªÑ©®‹0
 I
-java:S1168‚"+Return an empty collection instead of null.(¥¹ï8õ¶¨‰‹0
+java:S1168‚"+Return an empty collection instead of null.(¥¹ï8¹Ñ©®‹0
 I
-java:S1168‹"+Return an empty collection instead of null.(¥¹ï8õ¶¨‰‹0
+java:S1168‹"+Return an empty collection instead of null.(¥¹ï8¹Ñ©®‹0
 I
-java:S1168–"+Return an empty collection instead of null.(¥¹ï8¦ö´‰‹0
+java:S1168–"+Return an empty collection instead of null.(¥¹ï8¹Ñ©®‹0
 I
-java:S1168Ÿ"+Return an empty collection instead of null.(¥¹ï8¦ö´‰‹0
+java:S1168Ÿ"+Return an empty collection instead of null.(¥¹ï8¹Ñ©®‹0
+W
+java:S1128"5Remove this unused import 'com.revature.models.User'.(òÒš»ûÿÿÿÿ8„³Í°‹0
