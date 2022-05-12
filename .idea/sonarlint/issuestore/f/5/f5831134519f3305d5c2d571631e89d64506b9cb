@@ -1,18 +1,18 @@
 
 e
-java:S2095&"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
-e
-java:S2095V"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
-e
-java:S2095w"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
-e
-java:S2095="OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
-e
-java:S2095"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Θαϊ”
-e
 java:S2095l"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
 j
 java:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(©ΈΊΊϊÿÿÿÿ8‰†Ω®‹0
+e
+java:S2095="OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
+e
+java:S2095V"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
+e
+java:S2095&"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
+e
+java:S2095"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Θαϊ”
+e
+java:S2095w"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
 X
 java:S11260"BReplace this if-then-else statement by a single method invocation.(ι»Ϊο
 X
