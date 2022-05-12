@@ -9,7 +9,7 @@ public class ReimObject {
  public Date submission;
  public String description;
  public int author;
-
+public int status;
  public int type;
 
 

@@ -3,28 +3,54 @@ package com.revature.services;
 
 import java.sql.Date;
 import java.time.Instant;
+import java.util.List;
 
 import com.revature.dao.IReimDaoJDBC;
-import com.revature.models.User;
 import com.revature.models.Reimburse;
 
 public class ReimService {
      private IReimDaoJDBC rd;
 
-     public ReimService(IReimDaoJDBC rd){
-          this.rd=rd;
+     public ReimService(IReimDaoJDBC rd) {
+          this.rd = rd;
 
-}
-
-public void addReimburse(int amount, Date submission, String description, User author, int type){
-
-     Date d = new Date(Instant.now().toEpochMilli());
-
-     Reimburse r = new Reimburse(0,d,description,author,0);
-     rd.createReimburseByUser(r);
      }
+
+     public void addReimburse(int amount, Date submission, String description, int author, int type) {
+
+          Date d = new Date(Instant.now().toEpochMilli());
+
+          Reimburse r = new Reimburse(0, d, description, author, 0);
+          rd.createTicket(r);
+     }
+
+
+     public List<Reimburse> ReadReimburse(int id) {
+          return rd.getById(id);
+     }
+
+     public Reimburse updateReim(Reimburse r) {
+          return rd.updateReimburse(r);
+     }
+
+     public List<Reimburse> getApprovedId(int id) {
+         return rd.getApprovedById(id);
+    }
+
+     public List<Reimburse> getPendingId(int id) {
+          return rd.getPendingById(id);
+
+    }
+
+     public List<Reimburse> getAllApprove(Reimburse r ) {
+
+       return rd.getAllApproved(r);
+
+     }
+
+     public List<Reimburse> getAllPend(Reimburse r){
+         return rd.getAllPending(r);
+    }
 }
 
 
-
-       //Reimburse r = new Reimburse(0,d

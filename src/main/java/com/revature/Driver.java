@@ -40,6 +40,13 @@ public static void main(String[] args ) {
         });
         path("reimburse", ()-> {
             post("/",rc.handleCreateReim);
+            get("/",rc.handleViewTickets);
+            put("/",rc.handleUpdateReim);
+            get("/",rc.handleUserApprove);
+            get("/",rc.handleUserPend);
+            put("/",rc.handleGetAllAprrove);
+            put("/", rc.handlegetAllPend);
+
         });
 
 

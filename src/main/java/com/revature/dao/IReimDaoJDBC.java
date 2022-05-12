@@ -2,42 +2,161 @@ package com.revature.dao;
 
 import com.revature.models.Reimburse;
 import com.revature.utils.ConnectionSingleton;
-import com.revature.services.ReimService;
-import com.revature.controllers.ReimController;
-import com.revature.models.User;
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.SQLException;
+
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class IReimDaoJDBC {
 
-    private ConnectionSingleton cs = ConnectionSingleton.getConnectionSingleton();
+    ConnectionSingleton cs = ConnectionSingleton.getConnectionSingleton();
 
-    public void createReimburseByUser(Reimburse r) {
-       // public List<Reimburse> readReimburseByUser(int id)
+    public void createTicket(Reimburse r){
         Connection c = cs.getConnection();
-        try {
+        String sql = "insert into reimburse(amount, submitted_date, resolve_date, description, reimburse_author, resolver, reimburse_status, reimburse_type) values(?, ?, ?, ?, ?, ?, ?, ?);";
+        try{
             c.setAutoCommit(false);
-
-
-            String sql = "call create_reimburseu(?,?,?,?,?,)";
             CallableStatement call = c.prepareCall(sql);
-
-            call.setInt(1, r.getAmount());
+            call.setDouble(1, r.getAmount());
             call.setDate(2, r.getSubmission());
-            call.setString(3, r.getDescription());
-            call.setInt(4,r.getAuthor().getUserId());
-            call.setInt(5, r.getType());
-
+            call.setDate(3, r.getResolution());
+            call.setString(4, r.getDescription());
+            call.setInt(5, r.getAuthor());
+            call.setInt(6, r.getManager());
+            call.setInt(7, r.getStatus());
+            call.setInt(8, r.getType());
             call.execute();
-
             c.setAutoCommit(true);
-        } catch (SQLException e) {
+        }catch(SQLException e){e.printStackTrace();}
+    }
+
+    public List<Reimburse> getById(int id){
+        Connection c =cs.getConnection();
+        String sql = "select * from reimburse where reimburse_author = ?";
+        List<Reimburse> holder= new ArrayList<>();
+        try{
+            PreparedStatement p = c.prepareStatement(sql);
+            p.setInt(1, id);
+            ResultSet rs = p.executeQuery();
+            if(rs.wasNull()) {
+                return null;
+            }else {
+                while (rs.next()) {
+                    Reimburse temp = new Reimburse(rs.getInt(1), rs.getDouble(2), rs.getDate(3), rs.getDate(4), rs.getString(5), rs.getInt(6), rs.getInt(7), rs.getInt(8), rs.getInt(9));
+                    holder.add(temp);
+                }
+                return holder;
+            }
+        }catch(SQLException e){e.printStackTrace();}
+        return null;
+    }
+
+    public Reimburse updateReimburse(Reimburse r){
+        Connection c = cs.getConnection();
+        String sql = "update reimburse set amount = ?, submitted_date = ?, resolve_date = ?, description = ?, reimburse_author = ?, resolver = ?, reimburse_status = ?, reimburse_type = ? where reimburse_id = ?";
+        try{
+            c.setAutoCommit(false);
+            PreparedStatement p = c.prepareStatement(sql);
+            p.setDouble(1, r.getAmount());
+            p.setDate(2, r.getSubmission());
+            p.setDate(3, r.getResolution());
+            p.setString(4, r.getDescription());
+            p.setInt(5, r.getAuthor());
+            p.setInt(6, r.getManager());
+            p.setInt(7, r.getStatus());
+            p.setInt(8, r.getType());
+            p.setInt(9, r.getReimburse_id());
+            p.execute();
+            c.setAutoCommit(true);
+        }catch(SQLException e){
             e.printStackTrace();
+            return null;
         }
 
-
+        return r;
     }
+
+    public List<Reimburse> getApprovedById(int id){
+        Connection c =cs.getConnection();
+        String sql = "select * from reimburse where reimburse_author = ? and reimburse_status = 2";
+        List<Reimburse> holder= new ArrayList<>();
+        try{
+            PreparedStatement p = c.prepareStatement(sql);
+            p.setInt(1, id);
+            ResultSet rs = p.executeQuery();
+            if(rs.wasNull()) {
+                return null;
+            }else {
+                while (rs.next()) {
+                    Reimburse temp = new Reimburse(rs.getInt(1), rs.getDouble(2), rs.getDate(3), rs.getDate(4), rs.getString(5), rs.getInt(6), rs.getInt(7), rs.getInt(8), rs.getInt(9));
+                    holder.add(temp);
+                }
+                return holder;
+            }
+        }catch(SQLException e){e.printStackTrace();}
+        return null;
+    }
+
+    public List<Reimburse> getPendingById(int id){
+        Connection c =cs.getConnection();
+        String sql = "select * from reimburse where reimburse_author = ? and reimburse_status = 1";
+        List<Reimburse> holder= new ArrayList<>();
+        try{
+            PreparedStatement p = c.prepareStatement(sql);
+            p.setInt(1, id);
+            ResultSet rs = p.executeQuery();
+            if(rs.wasNull()) {
+                return null;
+            }else {
+                while (rs.next()) {
+                    Reimburse temp = new Reimburse(rs.getInt(1), rs.getDouble(2), rs.getDate(3), rs.getDate(4), rs.getString(5), rs.getInt(6), rs.getInt(7), rs.getInt(8), rs.getInt(9));
+                    holder.add(temp);
+                }
+                return holder;
+            }
+        }catch(SQLException e){e.printStackTrace();}
+        return null;
+    }
+
+    public List<Reimburse> getAllApproved(Reimburse r ){
+        Connection c =cs.getConnection();
+        String sql = "select * from reimburse where reimburse_status = 2";
+        List<Reimburse> holder= new ArrayList<>();
+        try{
+            PreparedStatement p = c.prepareStatement(sql);
+            ResultSet rs = p.executeQuery();
+            if(rs.wasNull()) {
+                return null;
+            }else {
+                while (rs.next()) {
+                    Reimburse temp = new Reimburse(rs.getInt(1), rs.getDouble(2), rs.getDate(3), rs.getDate(4), rs.getString(5), rs.getInt(6), rs.getInt(7), rs.getInt(8), rs.getInt(9));
+                    holder.add(temp);
+                }
+                return holder;
+            }
+        }catch(SQLException e){e.printStackTrace();}
+        return null;
+    }
+
+    public List<Reimburse> getAllPending(Reimburse r){
+        Connection c =cs.getConnection();
+        String sql = "select * from reimburse where reimburse_status = 1";
+        List<Reimburse> holder= new ArrayList<>();
+        try{
+            PreparedStatement p = c.prepareStatement(sql);
+            ResultSet rs = p.executeQuery();
+            if(rs.wasNull()) {
+                return null;
+            }else {
+                while (rs.next()) {
+                    Reimburse temp = new Reimburse(rs.getInt(1), rs.getDouble(2), rs.getDate(3), rs.getDate(4), rs.getString(5), rs.getInt(6), rs.getInt(7), rs.getInt(8), rs.getInt(9));
+                    holder.add(temp);
+                }
+                return holder;
+            }
+        }catch(SQLException e){e.printStackTrace();}
+        return null;
+    }
+
+
 }

@@ -1,5 +1,8 @@
 package com.revature.models;
 
+import java.util.SortedSet;
+import java.util.TreeSet;
+
 public class User {
 
     private int userId;
@@ -15,6 +18,7 @@ public class User {
     private String email;
 
     private boolean privilege = false;
+    private SortedSet<Reimburse> history = new TreeSet<>();
 
     public User() {
 
@@ -98,6 +102,14 @@ public int  getUserId(){
     }
     public void setPrivilege(boolean privilege){
         this.privilege=privilege;
+    }
+
+    public SortedSet<Reimburse> getHistory() {
+        return history;
+    }
+
+    public void setHistory(SortedSet<Reimburse> history) {
+        this.history = history;
     }
 
     @Override

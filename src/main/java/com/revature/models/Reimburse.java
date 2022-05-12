@@ -6,18 +6,18 @@ public class Reimburse {
 
   private int reimburse_id;
 
-  private int amount;
+  private double amount;
   private Date submission;
   private Date resolution;
   private String description;
-  private User author;
-  private User manager;
+  private int author;
+  private int manager;
   private int status;
   private int type;
 
   public Reimburse(){}
 
-public Reimburse( int amount, Date submission, String description, User author, int type) {
+public Reimburse( double amount, Date submission, String description, int author, int type) {
  this.amount=amount;
   this.submission = submission;
   this.description =description;
@@ -25,7 +25,7 @@ public Reimburse( int amount, Date submission, String description, User author, 
   this.type=type;
 }
 
-  public Reimburse(int reimburse_id, int amount, Date submission, Date resolution, String description, User author, User manager, int status, int type) {
+  public Reimburse(int reimburse_id, double amount, Date submission, Date resolution, String description, int author, int manager, int status, int type) {
     this.amount=amount;
     this.reimburse_id = reimburse_id;
     this.submission = submission;
@@ -46,11 +46,11 @@ public Reimburse( int amount, Date submission, String description, User author, 
     this.reimburse_id = reimburse_id;
   }
 
-  public int getAmount() {
+  public double getAmount() {
     return amount;
   }
 
-  public void setAmount(int amount) {
+  public void setAmount(double amount) {
     this.amount = amount;
   }
 
@@ -78,19 +78,19 @@ public Reimburse( int amount, Date submission, String description, User author, 
     this.description = description;
   }
 
-  public User getAuthor() {
+  public int getAuthor() {
     return author;
   }
 
-  public void setAuthor(User author) {
+  public void setAuthor(int author) {
     this.author = author;
   }
 
-  public User getManager() {
+  public int getManager() {
     return manager;
   }
 
-  public void setManager(User manager) {
+  public void setManager(int manager) {
     this.manager = manager;
   }
 
