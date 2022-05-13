@@ -16,8 +16,8 @@ java:S1104\"\Make handlegetAllPend a static final constant or non-public and pr
 F
 java:S1611"1Remove the parentheses around the "ctx" parameter(Î”ë^
 V	java:S125"<This block of commented-out lines of code should be removed.(Šúêùÿÿÿÿ
-N
-java:S1481"1Remove this unused "reimburserId" local variable.(í®´Û8úçğì‹0
+G
+java:S1481"1Remove this unused "reimburserId" local variable.(í®´Û
 V	java:S125!"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
 G
 java:S1611$"1Remove the parentheses around the "ctx" parameter(ê¯ˆ
@@ -35,16 +35,14 @@ V	java:S125E"<This block of commented-out lines of code should be removed.(Šú
 V	java:S125M"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
 G
 java:S1611Q"1Remove the parentheses around the "ctx" parameter(´³ŞÔ
-I
-java:S1602Q",Remove useless curly braces around statement(´³ŞÔ8­ îì‹0
+B
+java:S1602Q",Remove useless curly braces around statement(´³ŞÔ
 V	java:S125R"<This block of commented-out lines of code should be removed.(Šúêùÿÿÿÿ
 V	java:S125X"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
 G
 java:S1611\"1Remove the parentheses around the "ctx" parameter(°Õ¶©
-I
-java:S1602\",Remove useless curly braces around statement(°Õ¶©8¼øïì‹0
+B
+java:S1602\",Remove useless curly braces around statement(°Õ¶©
 V	java:S125]"<This block of commented-out lines of code should be removed.(Šúêùÿÿÿÿ
 V	java:S125c"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
 Q	java:S125i"<This block of commented-out lines of code should be removed.(Ï—ÆÒ
-\
-java:S1128":Remove this unused import 'com.revature.models.Reimburse'.(ÉõÙÔøÿÿÿÿ8ÿçğì‹0

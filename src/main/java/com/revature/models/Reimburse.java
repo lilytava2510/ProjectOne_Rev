@@ -8,6 +8,8 @@ public class Reimburse {
 
     private double amount;
     private Date submission;
+    private String start;
+    private String end;
     private Date resolution;
     private String description;
     private int author;
@@ -21,6 +23,13 @@ public class Reimburse {
     }
 
     public Reimburse(Date resolution, int manager, int status) {
+        this.resolution = resolution;
+        this.manager = manager;
+        this.status = status;
+    }
+
+    public Reimburse(int reimburse_id, Date resolution, int manager, int status) {
+        this.reimburse_id = reimburse_id;
         this.resolution = resolution;
         this.manager = manager;
         this.status = status;
@@ -125,6 +134,22 @@ public class Reimburse {
 
     public void setType(int type) {
         this.type = type;
+    }
+
+    public String getStart() {
+        return start;
+    }
+
+    public void setStart(String start) {
+        this.start = start;
+    }
+
+    public String getEnd() {
+        return end;
+    }
+
+    public void setEnd(String end) {
+        this.end = end;
     }
 
     @Override
