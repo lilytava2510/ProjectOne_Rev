@@ -4,6 +4,8 @@ import com.revature.models.User;
 import com.revature.dao.IReimDaoJDBC;
 import com.revature.dao.UserDaoJDBC;
 
+import java.util.List;
+
 public class UserService {
 
     private UserDaoJDBC ud;
@@ -30,25 +32,25 @@ public class UserService {
 
 
     public User loginUser(String email, String password) {
-
-        User u = ud.readUserByEmail(email);
-
-        if(u != null){
-            if(password.equals(u.getPassword())){
-
-                return u;
-            } else {
-
-                return null;
-            }
-        }
+            return ud.login(email, password);
+//        User u = ud.readUserByEmail(email);
+//
+//        if(u != null){
+//            if(password.equals(u.getPassword())){
+//
+//                return u;
+//            } else {
+//
+//                return null;
+//            }
+//        }
 
         //  public User logout(String email, String password) {
 
         //  User u = ud.loginUser(email,password);
 
 
-        return null;
+        //return null;
     }
 
 
@@ -56,7 +58,12 @@ public class UserService {
         return ud.updateUser(u);
     }
 
-    public void deleteUser(User u) {
-        ud.deleteUser(u.getUserId());
+    public void deleteUser(int id) {
+        ud.deleteUser(id);
     }
+
+    public List<User> readAllEmployee(){
+        return ud.readAllEmployees();
+    }
+
 }

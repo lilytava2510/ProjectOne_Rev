@@ -16,7 +16,7 @@ public class ReimService {
 
     }
 
-    public void addReimburse(double amount, Date submission, String description, int author, int type) {
+    public void addReimburse(double amount, String description, int author, int type) {
 
         Date d = new Date(Instant.now().toEpochMilli());
 
@@ -29,7 +29,13 @@ public class ReimService {
         return rd.getById(id);
     }
 
-    public Reimburse updateReim(Reimburse r) {
+    public Reimburse updateReim(int id, int resolver, int status) {
+        Date d = new Date(Instant.now().toEpochMilli());
+
+        Reimburse r = rd.getOneById(id);
+        r.setManager(resolver);
+        r.setStatus(status);
+        r.setResolution(d);
         return rd.updateReimburse(r);
     }
 

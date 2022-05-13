@@ -159,4 +159,25 @@ public class IReimDaoJDBC {
         return null;
     }
 
+    public Reimburse getOneById(int id){
+        Connection c =cs.getConnection();
+        String sql = "select * from reimburse where reimburse_id = ?";
+        Reimburse temp = null;
+        try{
+            PreparedStatement p = c.prepareStatement(sql);
+            p.setInt(1,id);
+            ResultSet rs = p.executeQuery();
+            if(rs.wasNull()) {
+                return null;
+            }else {
+                while (rs.next()) {
+                    temp = new Reimburse(rs.getInt(1), rs.getDouble(2), rs.getDate(3), rs.getDate(4), rs.getString(5), rs.getInt(6), rs.getInt(7), rs.getInt(8), rs.getInt(9));
+
+                }
+                return temp;
+            }
+        }catch(SQLException e){e.printStackTrace();}
+        return null;
+    }
+
 }

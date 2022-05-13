@@ -11,7 +11,7 @@ public class Reimburse {
     private Date resolution;
     private String description;
     private int author;
-    private int manager;
+    private int manager = 1;
     private int status;
     private int type;
 
@@ -20,7 +20,13 @@ public class Reimburse {
 
     }
 
-    public Reimburse( double amount, Date submission, Date resolution, String description, int author, int type) {
+    public Reimburse(Date resolution, int manager, int status) {
+        this.resolution = resolution;
+        this.manager = manager;
+        this.status = status;
+    }
+
+    public Reimburse(double amount, Date submission, Date resolution, String description, int author, int type) {
         this.amount=amount;
         this.submission = submission;
         this.description =description;

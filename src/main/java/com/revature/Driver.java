@@ -28,7 +28,7 @@ public class Driver {
         ReimController rc = new ReimController(rs);
         //Date d = new Date(2020-01-01);
 
-        User use = new User(1,"","","","","@", true);
+        //User use = new User(1,"","","","","@", true);
 
         //User useOne = new User(1,"mom","mom","mom","mom","m@m", false);
 
@@ -46,15 +46,15 @@ public class Driver {
         //ud.createUser(useThree);
         //ud.createUser(useFour);
 
-        System.out.println(ud.getUserById(2).toString());
+        //System.out.println(ud.getUserById(2).toString());
 
-        System.out.println(ud.readUserByEmail("m@m").toString());
+        //System.out.println(ud.readUserByEmail("m@m").toString());
         //System.out.println(us.updateUserInfo(use).toString());
 
         //us.deleteUser(use);
 
-        use.setRegistry(ud.readAllEmployees());
-        System.out.println(use.getRegistry().get(2));
+        //use.setRegistry(ud.readAllEmployees());
+        //System.out.println(use.getRegistry().get(2));
 
         //rd.createTicket(r);
 
@@ -79,37 +79,38 @@ public class Driver {
         //use.setHistory(rd.getPendingById(1));
         //System.out.println(use.getHistory().get(0).toString());
 
-//        Javalin server = Javalin.create(config ->
-//        {
-//            config.enableCorsForAllOrigins();
-//        });
-//
-//        server.routes(()-> {
-//            path("users", () -> {
-//                post("/register", uc.handleRegister);
-//                post("/login", uc.handleLogin);
-//                put("/", uc.handleUpdateUser);
-//                delete("/{id}", uc.handleDeleteUser);
-//            });
-//            path("reimburse", ()-> {
-//                post("/",rc.handleCreateReim);
-//                get("/",rc.handleViewTickets);
-//                put("/",rc.handleUpdateReim);
-//                get("/",rc.handleUserApprove);
-//                get("/",rc.handleUserPend);
-//                put("/",rc.handleGetAllAprrove);
-//                put("/", rc.handlegetAllPend);
-//
-//            });
-//
-//
-//
-//
-//
-//
-//            server.start(8080);
-//
-//        });
+        Javalin server = Javalin.create(config ->
+        {
+            config.enableCorsForAllOrigins();
+        });
+
+        server.routes(()-> {
+            path("users", () -> {
+                post("/register", uc.handleRegister);
+                post("/login", uc.handleLogin);
+                put("/update", uc.handleUpdateUser);
+                delete("/id", uc.handleDeleteUser);
+                get("/registry", uc.handleAllEmployee);
+            });
+            path("reimburse", ()-> {
+                post("/create",rc.handleCreateReim);
+                get("/own_ledger",rc.handleViewTickets);
+                put("/edit",rc.handleUpdateReim);
+                get("/own_approve",rc.handleUserApprove);
+                get("/own_pend",rc.handleUserPend);
+                get("/aprrove",rc.handleGetAllAprrove);
+                get("/pend", rc.handlegetAllPend);
+
+            });
+
+
+
+
+
+
+            server.start(8080);
+
+        });
 
 
     }

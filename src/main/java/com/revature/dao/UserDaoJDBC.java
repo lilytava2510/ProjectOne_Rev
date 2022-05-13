@@ -127,7 +127,7 @@ public class UserDaoJDBC {
                 user.setFirstName(rs.getString(4));
                 user.setLastName(rs.getString(5));
                 user.setEmail(rs.getString(6));
-                if(rs.getBoolean(7)){
+                if(rs.getInt(7) == 1){
                     user.setPrivilege(true);
                 }else{user.setPrivilege(false);}
             }
