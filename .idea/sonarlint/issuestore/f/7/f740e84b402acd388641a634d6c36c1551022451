@@ -1,39 +1,41 @@
 
+f
+java:S2095¬"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
+e
+java:S2095<"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
+f
+java:S2095ΐ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
 e
 java:S2095"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Θαϊ”
-e
-java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
-e
-java:S2095U"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
+l
+java:S2095n"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±8‹±Ότ‹0
 f
-java:S2095§"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
+java:S2095ƒ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
 e
 java:S2095'"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
 e
-java:S2095<"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
-e
-java:S2095j"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
+java:S2095U"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
 f
-java:S2095“"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
 A
 java:S1168+"+Return an empty collection instead of null.(¥Ήο
 A
 java:S11684"+Return an empty collection instead of null.(¥Ήο
 A
-java:S1168Y"+Return an empty collection instead of null.(¥Ήο
+java:S1168r"+Return an empty collection instead of null.(¥Ήο
 A
-java:S1168b"+Return an empty collection instead of null.(¥Ήο
-A
-java:S1168n"+Return an empty collection instead of null.(¥Ήο
-A
-java:S1168w"+Return an empty collection instead of null.(¥Ήο
+java:S1168{"+Return an empty collection instead of null.(¥Ήο
 B
-java:S1168‚"+Return an empty collection instead of null.(¥Ήο
+java:S1168‡"+Return an empty collection instead of null.(¥Ήο
 B
-java:S1168‹"+Return an empty collection instead of null.(¥Ήο
+java:S1168"+Return an empty collection instead of null.(¥Ήο
 B
-java:S1168–"+Return an empty collection instead of null.(¥Ήο
+java:S1168›"+Return an empty collection instead of null.(¥Ήο
 B
-java:S1168"+Return an empty collection instead of null.(¥Ήο
+java:S1168¤"+Return an empty collection instead of null.(¥Ήο
+B
+java:S1168―"+Return an empty collection instead of null.(¥Ήο
+B
+java:S1168Έ"+Return an empty collection instead of null.(¥Ήο
 W
-java:S1128"5Remove this unused import 'com.revature.models.User'.(ςÒ»ϋÿÿÿÿ8ΔΨµΨ‹0
+java:S1128"5Remove this unused import 'com.revature.models.User'.(ςÒ»ϋÿÿÿÿ8φ½τ‹0

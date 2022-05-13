@@ -1,10 +1,13 @@
 
+Y
+java:S1854"7Remove this useless assignment to local variable "use".(‡ì¸ıÿÿÿÿÿ8È Óò‹0
 P
 java:S1854"5Remove this useless assignment to local variable "c".(ÎüŒ…úÿÿÿÿ
 A
 java:S1481"&Remove this unused "c" local variable.(ÎüŒ…úÿÿÿÿ
 Q	java:S125"<This block of commented-out lines of code should be removed.(œ”†€
-Q	java:S125"<This block of commented-out lines of code should be removed.(ÒµÎ’
+J
+java:S1481"(Remove this unused "use" local variable.(‡ì¸ıÿÿÿÿÿ8Ì Óò‹0
 Q	java:S125!"<This block of commented-out lines of code should be removed.(¸à˜
 V	java:S125#"<This block of commented-out lines of code should be removed.(È¾Ó÷ıÿÿÿÿ
 V	java:S125%"<This block of commented-out lines of code should be removed.(ê²”Õüÿÿÿÿ
@@ -21,15 +24,13 @@ Q	java:S125C"<This block of commented-out lines of code should be removed.( ÃŸ
 Q	java:S125G"<This block of commented-out lines of code should be removed.(°èœ›
 Q	java:S125I"<This block of commented-out lines of code should be removed.( ‹È¥
 V	java:S125K"<This block of commented-out lines of code should be removed.(¬‡âïúÿÿÿÿ
-V	java:S125M"<This block of commented-out lines of code should be removed.(Æµ­Äüÿÿÿÿ
-Q	java:S125O"<This block of commented-out lines of code should be removed.(ï¿è’
+]	java:S125M"<This block of commented-out lines of code should be removed.(Æµ­Äüÿÿÿÿ8ªïËò‹0
+X	java:S125O"<This block of commented-out lines of code should be removed.(ï¿è’8í‹Óò‹0
 G
 java:S1602S",Remove useless curly braces around statement(ÒÌâ–øÿÿÿÿ
 n
 java:S1612R"SReplace this lambda with method reference 'JavalinConfig::enableCorsForAllOrigins'.(ù„áûüÿÿÿÿ
 \
-java:S1128":Remove this unused import 'com.revature.models.Reimburse'.(ÉõÙÔøÿÿÿÿ8 ôÏÙ‹0
-W
-java:S1128"5Remove this unused import 'com.revature.models.User'.(òÒš»ûÿÿÿÿ8 ôÏÙ‹0
+java:S1128":Remove this unused import 'com.revature.models.Reimburse'.(ÉõÙÔøÿÿÿÿ8çóÉò‹0
 G
-java:S1128"*Remove this unused import 'java.sql.Date'.(ÙÀ½Ê8 ôÏÙ‹0
+java:S1128"*Remove this unused import 'java.sql.Date'.(ÙÀ½Ê8çóÉò‹0

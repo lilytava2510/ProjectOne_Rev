@@ -28,7 +28,7 @@ public class Driver {
         ReimController rc = new ReimController(rs);
         //Date d = new Date(2020-01-01);
 
-        //User use = new User(1,"","","","","@", true);
+        User use = new User(1,"","","","","@", true);
 
         //User useOne = new User(1,"mom","mom","mom","mom","m@m", false);
 

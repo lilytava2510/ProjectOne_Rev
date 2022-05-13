@@ -54,6 +54,31 @@ public class IReimDaoJDBC {
 
     public Reimburse updateReimburse(Reimburse r){
         Connection c = cs.getConnection();
+        String sql = "update reimburse set  resolve_date = ?, resolver = ?, reimburse_status = ? where reimburse_id = ?";
+        try{
+            c.setAutoCommit(false);
+            PreparedStatement p = c.prepareStatement(sql);
+
+
+            p.setDate(1, r.getResolution());
+
+
+            p.setInt(2, r.getManager());
+            p.setInt(3, r.getStatus());
+
+            p.setInt(4, r.getReimburse_id());
+            p.execute();
+            c.setAutoCommit(true);
+        }catch(SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+
+        return r;
+    }
+
+    public Reimburse updateWholeReimburse(Reimburse r){
+        Connection c = cs.getConnection();
         String sql = "update reimburse set amount = ?, submitted_date = ?, resolve_date = ?, description = ?, reimburse_author = ?, resolver = ?, reimburse_status = ?, reimburse_type = ? where reimburse_id = ?";
         try{
             c.setAutoCommit(false);

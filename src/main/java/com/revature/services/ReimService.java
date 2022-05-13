@@ -32,7 +32,8 @@ public class ReimService {
     public Reimburse updateReim(int id, int resolver, int status) {
         Date d = new Date(Instant.now().toEpochMilli());
 
-        Reimburse r = rd.getOneById(id);
+        Reimburse r = new Reimburse();
+        r.setReimburse_id(id);
         r.setManager(resolver);
         r.setStatus(status);
         r.setResolution(d);
