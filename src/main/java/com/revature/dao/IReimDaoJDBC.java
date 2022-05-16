@@ -80,7 +80,12 @@ public class IReimDaoJDBC {
             e.printStackTrace();
             return null;
         }
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
+        if(r.getResolution() != null){
+            Date ne = new Date(r.getResolution().getTime());
+            r.setEnd(dateFormat.format(ne));
+        }
         return r;
     }
 

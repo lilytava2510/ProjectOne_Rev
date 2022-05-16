@@ -34,17 +34,17 @@ public class UserController {
         ObjectMapper mapper = new ObjectMapper();
         LoginObject lo = mapper.readValue(ctx.body(), LoginObject.class);
         User u = us.loginUser( lo.email, lo.password);
-//        if(u == null){
-//            ctx.status(403);
-//            ctx.result("Username or password was incorrect");
-//        } else {
+        if(u == null){
+            ctx.status(407);
+            ctx.result("Username or password was incorrect");
+        } else {
             ctx.req.getSession().setAttribute("loggedIn", u.getEmail());
             ctx.req.getSession().setAttribute("id", "" + u.getUserId());
             ctx.result(om.writeValueAsString(u));
 
 
             ctx.result("logged");
-      //  }
+        }
     };
 
     public Handler handleUpdateUser = (ctx) -> {
@@ -56,10 +56,16 @@ public class UserController {
     };
 
     public Handler handleDeleteUser = (ctx)-> {
-        //int id = Integer.parseInt(ctx.pathParam("id"));
-        RegisterObject ro = om.readValue(ctx.body(), RegisterObject.class);
-        us.deleteUser(ro.id);
-        ctx.result("User was deleted");
+        if (ctx.req.getSession().getAttribute("id") == null) {
+            ctx.status(408);
+            ctx.result("You must log in to delete user");
+       } else {
+            int id = Integer.parseInt((String) ctx.req.getSession().getAttribute("id"));
+            //int id = Integer.parseInt(ctx.pathParam("id"));
+            //RegisterObject ro = om.readValue(ctx.body(), RegisterObject.class);
+            us.deleteUser(id);
+            ctx.result("User was deleted");
+        }
     };
 
     public Handler handleAllEmployee = (ctx) -> {

@@ -25,7 +25,7 @@ public class ReimService {
     }
 
 
-    public List<Reimburse> ReadReimburse(int id) {
+    public List<Reimburse> readReimburse(int id) {
         return rd.getById(id);
     }
 
