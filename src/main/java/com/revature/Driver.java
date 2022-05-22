@@ -83,21 +83,24 @@ public class Driver {
         {
             config.enableCorsForAllOrigins();
         });
-
+        //server.before(ctx -> ctx.header("Access-Control-Allow-Credentials", "true"));
+        //server.before(ctx -> ctx.header("Access-Control-Expose-Headers", "*"));
         server.routes(()-> {
             path("users", () -> {
                 post("/register", uc.handleRegister);
                 post("/login", uc.handleLogin);
                 put("/update", uc.handleUpdateUser);
-                delete("/id", uc.handleDeleteUser);
+                delete("/delete{id}", uc.handleDeleteUser);
                 get("/registry", uc.handleAllEmployee);
+                get("/logout", uc.handleLogout);
+                get("/info{id}", uc.handleGetUserInfo);
             });
             path("reimburse", ()-> {
                 post("/create",rc.handleCreateReim);
-                get("/own_ledger",rc.handleViewTickets);
+                get("/get{id}",rc.handleViewTickets);
                 put("/edit",rc.handleUpdateReim);
-                get("/own_approve",rc.handleUserApprove);
-                get("/own_pend",rc.handleUserPend);
+                get("/own_approve{id}",rc.handleUserApprove);
+                get("/own_pend{id}",rc.handleUserPend);
                 get("/approve",rc.handleGetAllAprrove);
                 get("/pend", rc.handlegetAllPend);
 

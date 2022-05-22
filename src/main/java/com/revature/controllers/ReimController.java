@@ -34,37 +34,40 @@ public class ReimController {
 
     };
     public Handler handleViewTickets = (ctx) -> {
-        if (ctx.req.getSession().getAttribute("id") == null) {
+        int id = Integer.parseInt(ctx.pathParam("id"));
+        if (id == 0) {
             ctx.status(402);
             ctx.result("Please log in to view tickets.");
         } else {
-            int reimburserId = Integer.parseInt((String) ctx.req.getSession().getAttribute("id"));
+
         //RegisterObject ro = om.readValue(ctx.body(), RegisterObject.class);
 
-            ctx.result(om.writeValueAsString(rs.readReimburse(reimburserId)));
+            ctx.result(om.writeValueAsString(rs.readReimburse(id)));
         }
 
     };
     public Handler handleUpdateReim = (ctx) -> {
-        if (ctx.req.getSession().getAttribute("id") == null) {
-            ctx.status(409);
-            ctx.result("Please log in to view alter tickets.");
-        } else {
-            int reimburserId = Integer.parseInt((String) ctx.req.getSession().getAttribute("id"));
+        //int id = Integer.parseInt(ctx.pathParam("id"));
+//        if (id == 0) {
+//            ctx.status(409);
+//            ctx.result("Please log in to view alter tickets.");
+//        } else {
+
             ReimObject ro = om.readValue(ctx.body(), ReimObject.class);
-            ctx.result(om.writeValueAsString(rs.updateReim(ro.id, reimburserId, ro.status)));
-        }
+            ctx.result(om.writeValueAsString(rs.updateReim(ro.id, ro.author, ro.status)));
+        //}
     };
 
 
     public Handler handleUserApprove = (ctx) -> {
-        if (ctx.req.getSession().getAttribute("id") == null) {
+        int id = Integer.parseInt(ctx.pathParam("id"));
+        if (id == 0) {
             ctx.status(403);
             ctx.result("Please log in to view approved tickets.");
         } else {
-            int reimburserId = Integer.parseInt((String) ctx.req.getSession().getAttribute("id"));
+
         //RegisterObject ro = om.readValue(ctx.body(), RegisterObject.class);
-            ctx.result(om.writeValueAsString(rs.getApprovedId(reimburserId)));
+            ctx.result(om.writeValueAsString(rs.getApprovedId(id)));
 
 
         }
@@ -72,14 +75,15 @@ public class ReimController {
 
 
     public Handler handleUserPend = (ctx) -> {
-        if (ctx.req.getSession().getAttribute("id") == null) {
+        int id = Integer.parseInt(ctx.pathParam("id"));
+        if (id == 0) {
             ctx.status(404);
             ctx.result("Log in in order to view the status of your tickets.");
         } else {
-        int reimburserId = Integer.parseInt((String) ctx.req.getSession().getAttribute("id"));
+
         //RegisterObject ro = om.readValue(ctx.body(), RegisterObject.class);
 
-            ctx.result(om.writeValueAsString(rs.getPendingId(reimburserId)));
+            ctx.result(om.writeValueAsString(rs.getPendingId(id)));
         }
 
     };

@@ -66,4 +66,9 @@ public class UserService {
         return ud.readAllEmployees();
     }
 
+    public User getUserInfo(int id){
+        //System.out.println("s" + id);
+        return ud.getUserById(id);
+    }
+
 }
