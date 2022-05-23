@@ -4,8 +4,6 @@ import {Link} from 'react-router-dom';
 import {RootState, AppDispatch} from "../../Store";
 import { clearReim } from '../../Slices/ReimSlice';
 import { clearUser } from '../../Slices/UserSlice';
-//import defaultImage from '../../defaultpic.jpg';
-
 import './Navbar.css';
 
 

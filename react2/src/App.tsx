@@ -11,17 +11,17 @@ import {ManagerPage} from "./Views/ManagerPage/ManagerPage";
 
 function App() {
   return (
-    <BrowserRouter>
+  <BrowserRouter>
     <Routes>
       <Route path="*" element={<Navigate to="/login"replace />}/>
       <Route path="/login" element={<LoginPage />}/>
       <Route path="/feed"  element={<FeedPage/>}/>
-      <Route path="/user/:id" element={<InfoPage/>}/>
+      <Route path="/info" element={<InfoPage/>}/>
       <Route path="/reim" element={<ReimPage/>}/>
       <Route path="/pend" element={<ManagerPage/>}/>
       <Route path="/approve" element={<ApprovePage/>}/>
-      </Routes>
-          </BrowserRouter>
+    </Routes>
+  </BrowserRouter>
   );
 }
 

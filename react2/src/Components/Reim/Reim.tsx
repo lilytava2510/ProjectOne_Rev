@@ -31,7 +31,6 @@ export const Reim:React.FC<IReim> = (ticket:IReim) => {
              author,
              status
          }
-         console.log(note);
                 dispatch(editReim(note));
             }
         

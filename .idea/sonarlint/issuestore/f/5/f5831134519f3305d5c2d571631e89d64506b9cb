@@ -1,0 +1,28 @@
+
+c
+java:S2095’"GUse try-with-resources or close this "Statement" in a "finally" clause.(©¸ººúÿÿÿÿ
+e
+java:S2095&"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±
+e
+java:S2095="OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±
+e
+java:S2095w"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±
+e
+java:S2095"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Èáú”
+e
+java:S2095V"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±
+e
+java:S2095l"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†óù±
+X
+java:S11260"BReplace this if-then-else statement by a single method invocation.(é»Úï
+X
+java:S1126G"BReplace this if-then-else statement by a single method invocation.(é»Úï
+Y
+java:S1126‚"BReplace this if-then-else statement by a single method invocation.(é»Úï
+B
+java:S1168•"+Return an empty collection instead of null.(¥¹ï
+R	java:S125™"<This block of commented-out lines of code should be removed.(’ÿÌİ
+B
+java:S1168 "+Return an empty collection instead of null.(¥¹ï
+U
+java:S1128":Remove this unused import 'com.revature.models.Reimburse'.(ÉõÙÔøÿÿÿÿ

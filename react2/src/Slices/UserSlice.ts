@@ -5,8 +5,10 @@ import axios from "axios";
 interface UserSliceState {
     loading: boolean,
     error: boolean,
-    user?: IUser
-    currentProfile?: IUser
+    user?: IUser,
+    currentProfile?: IUser,
+    people?: IUser[]
+
 }
 
 
@@ -20,13 +22,13 @@ type Login = {
 }
 
 type Paper = {
-    userId: number,
-    firstName: string,
-    lastName: string,
+    id: any,
+    first: string,
+    last: string,
     username: string,
     email: string,
     password: string,
-    privilege: boolean
+    trust: boolean
 }
 
 export const loginUser = createAsyncThunk(
@@ -79,6 +81,20 @@ export const getUser = createAsyncThunk(
     }  
   );
 
+  export const getPeople = createAsyncThunk(
+    "user/registry",
+    async ( thunkAPI) => {
+        try{
+              //axios.defaults.withCredentials = true;
+            const res = await axios.get(`http://localhost:8080/users/registry`);
+  
+            return res.data;
+        } catch (e){
+            console.log(e);
+        }
+    }  
+  );
+
 export const UserSlice = createSlice({
     name: "user", 
     initialState: initialUserState,
@@ -87,7 +103,12 @@ export const UserSlice = createSlice({
             state.error = !state.error;
         },
         clearUser: (state) => {
-            state.user = undefined
+            state.user = undefined;
+            state.currentProfile = undefined;
+            state.people = undefined;
+        },
+        clearHold: (state) => {
+            state.currentProfile = undefined;
         }
     }, 
     extraReducers: (builder) => {
@@ -117,9 +138,35 @@ export const UserSlice = createSlice({
                 state.error = true;
                 state.loading = false;
                 });
+        builder.addCase(getPeople.pending, (state, action) => {
+            state.loading = true;
+        });
+        builder.addCase(getPeople.fulfilled, (state, action) => {
+            state.people = action.payload;
+            state.error = false;
+            state.loading = false;
+                });
+
+        builder.addCase(getPeople.rejected, (state, action) => {
+            state.error = true;
+            state.loading = false;
+        });
+        builder.addCase(getUser.pending, (state, action) => {
+            state.loading = true;
+        });
+        builder.addCase(getUser.fulfilled, (state, action) => {
+            state.currentProfile = action.payload;
+            state.error = false;
+            state.loading = false;
+                });
+
+        builder.addCase(getUser.rejected, (state, action) => {
+                state.error = true;
+                state.loading = false;
+                });
     }
 })
 
-   export const {toggleError, clearUser} = UserSlice.actions;
+   export const {toggleError, clearUser, clearHold} = UserSlice.actions;
 
 export default UserSlice.reducer;

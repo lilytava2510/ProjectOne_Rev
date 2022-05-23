@@ -5,9 +5,9 @@ import { RootState, AppDispatch}  from '../../Store';
 import {useNavigate} from "react-router-dom";
 import {Loading} from "../../Components/Loading/Loading";
 import {Reim} from "../../Components/Reim/Reim";
-import {IUser} from "../../Interface/IUser";
 import {IReim} from "../../Interface/IReim";
 import {getReim} from "../../Slices/ReimSlice";
+import { ReimCreate } from '../../Components/ReimCreate/ReimCreate';
 
 export const FeedPage: React.FC = () => {
 
@@ -49,6 +49,7 @@ export const FeedPage: React.FC = () => {
             }): <Loading/>
         } 
            </table>
+            <ReimCreate/>
         </>
     )
 

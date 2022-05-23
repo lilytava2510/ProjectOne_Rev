@@ -5,6 +5,7 @@ import com.revature.models.LoginObject;
 import com.revature.models.RegisterObject;
 import com.revature.models.User;
 import com.revature.services.UserService;
+import com.revature.utils.LoggingUtil;
 import io.javalin.http.Handler;
 
 public class UserController {
@@ -35,6 +36,7 @@ public class UserController {
         LoginObject lo = mapper.readValue(ctx.body(), LoginObject.class);
         User u = us.loginUser( lo.email, lo.password);
         if(u == null){
+            LoggingUtil.logger.warn("improper attempt at login on email: " + lo.email);
             ctx.status(407);
             ctx.result("Username or password was incorrect");
         } else {
@@ -77,6 +79,7 @@ public class UserController {
         int id = Integer.parseInt(ctx.pathParam("id"));
         //System.out.println(id);
         if(id == 0){
+            LoggingUtil.logger.warn("improper attempt at view of user info");
         //if (ctx.req.getSession().getAttribute("id") == null) {
             ctx.status(409);
             ctx.result("You must log in to view user");

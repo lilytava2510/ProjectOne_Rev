@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.revature.ServiceTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2022-05-16T21:56:03" hostname="DESKTOP-MMVP1UK" time="0.466">
+<testsuite name="com.revature.ServiceTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2022-05-23T19:04:37" hostname="DESKTOP-MMVP1UK" time="0.436">
   <properties/>
-  <testcase name="loginTest" classname="com.revature.ServiceTest" time="0.449"/>
-  <testcase name="readAllTest" classname="com.revature.ServiceTest" time="0.003"/>
-  <testcase name="updateUserInfoTest" classname="com.revature.ServiceTest" time="0.002"/>
-  <testcase name="lieDetection" classname="com.revature.ServiceTest" time="0.002"/>
+  <testcase name="loginTest" classname="com.revature.ServiceTest" time="0.418"/>
+  <testcase name="readAllTest" classname="com.revature.ServiceTest" time="0.004"/>
+  <testcase name="updateUserInfoTest" classname="com.revature.ServiceTest" time="0.001"/>
+  <testcase name="idTest" classname="com.revature.ServiceTest" time="0.002"/>
+  <testcase name="lieDetection" classname="com.revature.ServiceTest" time="0.001"/>
   <testcase name="getAllApproveTest" classname="com.revature.ServiceTest" time="0.001"/>
   <testcase name="readIdTicketTest" classname="com.revature.ServiceTest" time="0.001"/>
   <testcase name="getAllPendTest" classname="com.revature.ServiceTest" time="0.001"/>
-  <testcase name="registrationTest" classname="com.revature.ServiceTest" time="0.001"/>
-  <testcase name="getIdApproveTest" classname="com.revature.ServiceTest" time="0.0"/>
-  <testcase name="getIdPendTest" classname="com.revature.ServiceTest" time="0.0"/>
-  <testcase name="updateTicketTest" classname="com.revature.ServiceTest" time="0.002"/>
+  <testcase name="registrationTest" classname="com.revature.ServiceTest" time="0.002"/>
+  <testcase name="getIdApproveTest" classname="com.revature.ServiceTest" time="0.001"/>
+  <testcase name="getIdPendTest" classname="com.revature.ServiceTest" time="0.001"/>
+  <testcase name="updateTicketTest" classname="com.revature.ServiceTest" time="0.001"/>
   <testcase name="deleteTest" classname="com.revature.ServiceTest" time="0.001"/>
   <testcase name="addTicketTest" classname="com.revature.ServiceTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>

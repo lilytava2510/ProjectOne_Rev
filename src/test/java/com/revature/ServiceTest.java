@@ -67,6 +67,17 @@ public class ServiceTest {
     }
 
     @Test
+    public void idTest(){
+        User o = new User();
+        o.setUserId(1);
+        o.setPassword("test");
+        when((ud).getUserById(anyInt())).thenReturn(o);
+        User x = us.getUserInfo(1);
+        verify(ud).getUserById(anyInt());
+        assertEquals("test", x.getPassword(),"passing");
+    }
+
+    @Test
     public void updateUserInfoTest(){
         User o = new User();
         o.setUsername("pass");

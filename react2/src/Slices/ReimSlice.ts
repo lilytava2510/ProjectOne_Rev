@@ -15,10 +15,10 @@ const initialReimState: ReimSliceState = {
 };
 
 type Tick = {
-    amount: number,
+    amount: any,
     description: string,
-    author: number,
-    type: number
+    author: any,
+    type: any
 }
 
 type Tack = {

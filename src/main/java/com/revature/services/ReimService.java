@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.revature.dao.IReimDaoJDBC;
 import com.revature.models.Reimburse;
+import com.revature.utils.LoggingUtil;
 
 public class ReimService {
     private IReimDaoJDBC rd;
@@ -22,6 +23,7 @@ public class ReimService {
 
         Reimburse r = new Reimburse( amount, d, description, author, 1, type);
         rd.createTicket(r);
+        LoggingUtil.logger.info("New reimbursement made");
     }
 
 
@@ -38,6 +40,7 @@ public class ReimService {
         r.setStatus(status);
         r.setResolution(d);
         return rd.updateReimburse(r);
+
     }
 
     public List<Reimburse> getApprovedId(int id) {

@@ -2,9 +2,7 @@ import React, { useEffect } from 'react';
 import {useNavigate } from 'react-router-dom';
 import { useSelector }  from 'react-redux';
 import { RootState } from '../../Store';
-
 import { Login } from '../../Components/LoginForm';
-
 import "./LoginPage.css";
 
 export const LoginPage: React.FC = () => {

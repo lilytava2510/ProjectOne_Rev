@@ -1,13 +1,52 @@
-import React from "react";
-import {useParams} from "react-router-dom";
+import React, {useEffect} from "react";
+import {Navbar } from '../../Components/Navbar/Navbar';
+import { useSelector, useDispatch} from 'react-redux';
+import { RootState, AppDispatch}  from '../../Store';
+import {useNavigate} from "react-router-dom";
+import { UserElement } from "../../Components/UserElement/UserElement";
+import { IUser } from "../../Interface/IUser";
+import { Loading } from "../../Components/Loading/Loading";
+import { getPeople } from "../../Slices/UserSlice";
 
-export const InfoPage :React.FC = () => {
+export const InfoPage: React.FC = () => {
 
-
-    const { id } = useParams();
+    const userInfo = useSelector((state:RootState) => state.user);
    
+    const dispatch:AppDispatch = useDispatch();
+    const navigator = useNavigate();
+        useEffect(() => {
+        if(!userInfo.user){
+          navigator("/login");
+
+        }else if(userInfo.user && userInfo.user.privilege && !userInfo.people){
+            dispatch(getPeople());
+        }
+
+    },[userInfo]);
+    console.log(userInfo.user?.privilege)
     return(
-        <h1>Personal Info {id}</h1>
+        <>
+
+           <Navbar />
+           <h1> Welcome: {userInfo.user?.firstName}</h1>
+           <h2> Page</h2>
+           <table>
+               <tr>
+                   <th>User ID #</th>
+                   <th>First Name</th>
+                   <th>Last Name</th>
+                   <th>Email</th>
+                   <th>Username</th>
+                   <th>Password</th>
+                   <th>Manager</th>
+               </tr>
+                    {userInfo.people?
+                     userInfo.people.map((post:IUser)=> {
+                        return <UserElement {...post} key={post.userId}/>
+                    }): <Loading/>
+                    } 
+         </table>
+        </>
     )
-   
-   }
+
+    }
