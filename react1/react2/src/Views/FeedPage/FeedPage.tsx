@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect} from 'react';
 import {Navbar } from '../../Components/Navbar/Navbar';
 import { useSelector, useDispatch} from 'react-redux';
 import { RootState, AppDispatch}  from '../../Store';
@@ -8,6 +8,7 @@ import {Reim} from "../../Components/Reim/Reim";
 import {IUser} from "../../Interface/IUser";
 import {IReim} from "../../Interface/IReim";
 import {getReim} from "../../Slices/ReimSlice";
+import { CreatePage } from '../../Components/ReimCreate/ReimCreate';
 
 export const FeedPage: React.FC = () => {
 
@@ -49,6 +50,7 @@ export const FeedPage: React.FC = () => {
             }): <Loading/>
         } 
            </table>
+           <CreatePage />
         </>
     )
 

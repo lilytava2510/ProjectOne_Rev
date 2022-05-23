@@ -22,14 +22,15 @@ public class ReimController {
 
     public Handler handleCreateReim = (ctx) -> {
 //        if (ctx.req.getSession().getAttribute("id") == null) {
-//            ctx.status(401);
-//            ctx.result("You must log in to request a reimbursement");
+//           ctx.status(401);
+//          ctx.result("You must log in to request a reimbursement");
 //        } else {
-            int reimburserId = Integer.parseInt((String) ctx.req.getSession().getAttribute("id"));
-            //User u = new User();
-            ReimObject r = om.readValue(ctx.body(), ReimObject.class);
-            //u.setUserId(r.author);
-            rs.addReimburse(r.amount, r.description, reimburserId, r.type);
+       // int id = Integer.parseInt(ctx.pathParam("id"));
+          //  User u = new User();
+          //  u.setUserId(id);
+        ReimObject r = om.readValue(ctx.body(), ReimObject.class);
+
+        rs.addReimburse(r.amount, r.description,r.author, r.type);
 
 
     };

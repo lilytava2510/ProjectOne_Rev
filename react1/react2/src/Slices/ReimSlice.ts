@@ -15,10 +15,10 @@ const initialReimState: ReimSliceState = {
 };
 
 type Tick = {
-    amount: number,
+    amount: any,
     description: string,
-    author: number,
-    type: number
+    author: any,
+    type: any
 }
 
 type Tack = {
@@ -33,9 +33,7 @@ export const writeReim = createAsyncThunk(
          try{
               const res = await axios.post('http://localhost:8080/reimburse/create',ticket);
         
-        return  {
-                
-        }
+        return  ticket;
 
         } catch(e){
             return thunkAPI.rejectWithValue('Wrong login try again');
