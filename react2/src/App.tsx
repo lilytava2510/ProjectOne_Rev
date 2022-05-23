@@ -6,6 +6,8 @@ import {LoginPage} from './Views/LoginPage/LoginPage';
 import { FeedPage } from './Views/FeedPage/FeedPage';
 import {InfoPage} from "./Views/InfoPage/InforPage";
 import {ReimPage} from "./Views/ReimPage/ReimPage";
+import {ApprovePage} from "./Views/ViewApprove/ViewApprove";
+import {ManagerPage} from "./Views/ManagerPage/ManagerPage";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Route path="/feed"  element={<FeedPage/>}/>
       <Route path="/user/:id" element={<InfoPage/>}/>
       <Route path="/reim" element={<ReimPage/>}/>
+      <Route path="/pend" element={<ManagerPage/>}/>
+      <Route path="/approve" element={<ApprovePage/>}/>
       </Routes>
           </BrowserRouter>
   );

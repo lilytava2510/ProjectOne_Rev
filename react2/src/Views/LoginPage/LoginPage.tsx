@@ -13,8 +13,10 @@ export const LoginPage: React.FC = () => {
 
     const navigator = useNavigate();
      useEffect(()=> {
-          if(!userState.error && userState.user){
+          if(!userState.error && userState.user && !userState.user.privilege){
               navigator('/feed');
+          }else if(!userState.error && userState.user?.privilege){
+            navigator('/pend');
           }
      }, [userState]);
 

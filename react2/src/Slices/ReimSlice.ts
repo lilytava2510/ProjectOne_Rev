@@ -22,9 +22,9 @@ type Tick = {
 }
 
 type Tack = {
-    id: number,
-    author: number,
-    status: number
+    id: any,
+    author: any,
+    status: any
 }
 
 export const writeReim = createAsyncThunk(
@@ -47,8 +47,8 @@ export const editReim = createAsyncThunk(
     'reimburse/edit',
     async(ticket:Tack, thunkAPI) => {
          try{
-              const res = await axios.post('http://localhost:8080/reimburse/edit',ticket);
-        
+              const res = await axios.put('http://localhost:8080/reimburse/edit',ticket);
+                    console.log(ticket);
         return  {
                 
         }

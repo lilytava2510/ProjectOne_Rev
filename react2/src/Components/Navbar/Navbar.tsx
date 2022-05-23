@@ -17,6 +17,11 @@ export const Navbar: React.FC = () => {
          dispatch(clearReim());
          dispatch(clearUser());
      }
+
+    const handleLink = () =>{
+        dispatch(clearReim());
+    }
+
      const user = useSelector((state:RootState) => state.user.user);
 
     return( 
@@ -34,6 +39,20 @@ export const Navbar: React.FC = () => {
                         <button className="logout-btn" onClick={handleLogout}>Log out</button>
                     </Link>
                 </li>
+                {  user?.privilege?
+                 <li className="nav-item">
+                 <Link to= {"/pend"} className="nav-link">
+                     <button className="link-btn" onClick={handleLink}>View Pending</button>
+                     </Link>
+                 <li>
+                 <li className="nav-item">
+                    <Link to= {"/approve"} className="nav-link">
+                    <button className="link-btn" onClick={handleLink}>View Approved</button>
+                    </Link>
+                </li>
+                 </li>
+             </li>
+                : <></> }
             </ul>
         </nav>
         

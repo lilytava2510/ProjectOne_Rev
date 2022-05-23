@@ -69,8 +69,8 @@ export const getUser = createAsyncThunk(
     "user/update",
     async (paper:Paper, thunkAPI) => {
         try{
-              axios.defaults.withCredentials = true;
-            const res = await axios.get(`http://localhost:8080/users/update`, paper);
+              //axios.defaults.withCredentials = true;
+            const res = await axios.put(`http://localhost:8080/users/update`, paper);
   
             return res.data;
         } catch (e){
