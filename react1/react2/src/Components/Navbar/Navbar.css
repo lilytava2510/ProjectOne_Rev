@@ -5,7 +5,7 @@
     --accent: #23CE6B;
     --text-white: #FBFBFB;
   }
-  .nav-item {
+ /* .nav-item {
     display: flex;
     align-items: center;
     height: 80px;
@@ -13,6 +13,7 @@
     margin-left: 10px;
     padding: 20px;
   }
+  
   .nav-menu {
         display: grid;
         grid-template-columns: repeat(5, auto);
@@ -66,4 +67,4 @@
     font-size: 1.5rem;
     text-decoration: none;
     cursor: pointer;
-}
+}*/

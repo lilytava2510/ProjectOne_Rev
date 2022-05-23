@@ -21,13 +21,13 @@ type Login = {
 }
 
 type Paper = {
-    userId: number,
-    firstName: string,
-    lastName: string,
+    id: any,
+    first: string,
+    last: string,
     username: string,
     email: string,
     password: string,
-   // privilege: boolean
+   trust: boolean
 }
 
 export const loginUser = createAsyncThunk(

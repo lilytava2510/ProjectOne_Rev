@@ -21,16 +21,16 @@ public class ReimController {
     }
 
     public Handler handleCreateReim = (ctx) -> {
-        if (ctx.req.getSession().getAttribute("id") == null) {
-            ctx.status(401);
-            ctx.result("You must log in to request a reimbursement");
-        } else {
+//        if (ctx.req.getSession().getAttribute("id") == null) {
+//            ctx.status(401);
+//            ctx.result("You must log in to request a reimbursement");
+//        } else {
             int reimburserId = Integer.parseInt((String) ctx.req.getSession().getAttribute("id"));
             //User u = new User();
             ReimObject r = om.readValue(ctx.body(), ReimObject.class);
             //u.setUserId(r.author);
             rs.addReimburse(r.amount, r.description, reimburserId, r.type);
-        }
+
 
     };
     public Handler handleViewTickets = (ctx) -> {
@@ -89,24 +89,24 @@ public class ReimController {
     };
 
     public Handler handleGetAllAprrove = (ctx) -> {
-        if (ctx.req.getSession().getAttribute("id") == null) {
-            ctx.status(405);
-            ctx.result("Log in in order to change the status of user tickets.");
-        } else {
+//        if (ctx.req.getSession().getAttribute("id") == null) {
+//            ctx.status(405);
+//            ctx.result("Log in in order to change the status of user tickets.");
+//        } else {
 
             ctx.result(om.writeValueAsString(rs.getAllApprove()));
-        }
+
 
 
     };
     public Handler handlegetAllPend = (ctx) -> {
-        if (ctx.req.getSession().getAttribute("id") == null) {
-            ctx.status(406);
-            ctx.result("Log in in order to change the status of user tickets.");
-        } else {
+//        if (ctx.req.getSession().getAttribute("id") == null) {
+//            ctx.status(406);
+//            ctx.result("Log in in order to change the status of user tickets.");
+//        } else {
 
             ctx.result(om.writeValueAsString(rs.getAllPend()));
-        }
+//        }
 
 
     };

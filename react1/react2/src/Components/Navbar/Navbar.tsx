@@ -22,13 +22,15 @@ export const Navbar: React.FC = () => {
          dispatch(clearUser());
      }
      const user = useSelector((state:RootState) => state.user.user);
-
+     const handleLink = () =>{
+        dispatch(clearReim());
+    }
     return( 
         <nav className="navbar">
        
             <ul>
                 <li className="nav-item">
-                    <Link to= {"/feed"} className="nav-link">Profile</Link>
+                    <Link to= {"/info"} className="nav-link">Profile</Link>
                 </li>
                 <li className="nav-item">
                     <Link to= {"/feed"} className="nav-link">Home</Link>
@@ -40,10 +42,14 @@ export const Navbar: React.FC = () => {
                 </li>
                   {  user?.privilege?
                  <li className="nav-item">
-                 <Link to= {"/pend"} className="nav-link">View Pending</Link>
+               <Link to= {"/pend"} className="nav-link">
+                     <button className="link-btn" onClick={handleLink}>View Pending</button>
+                     </Link>
                  <li>
                  <li className="nav-item">
-                    <Link to= {"/approve"} className="nav-link">View Approved</Link>
+                    <Link to= {"/approve"} className="nav-link">
+                    <button className="link-btn" onClick={handleLink}>View Approved</button>
+                    </Link>
                 </li>
                  </li>
              </li>

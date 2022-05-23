@@ -23,7 +23,7 @@ export const ManagerPage: React.FC = () => {
        else if(!userInfo.user.privilege){
        navigator("/login")
     }
-        else if(userInfo.user.privilege){
+        else if(userInfo.user.privilege && !reimState.reimburse){
             dispatch(allPendReim());
 
         }

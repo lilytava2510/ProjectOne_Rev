@@ -15,12 +15,15 @@ export const UserIn: React.FC = () => {
 
 
 
-    const [userId, setUserId] = useState<number>(0);
-    const [firstName, setFirstName] = useState<string>("");
-    const [lastName, setlastName] = useState<string>("");
+    // const [userId, setUserId] = useState<number>(0);
+    const [first, setFirstName] = useState<string>("");
+    const [last, setlastName] = useState<string>("");
     const [username, setUsername] = useState<string>("");
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+    const trust = true;
+
+    const id = user.user?.userId;
     //const [privilege, setPrivilege] = useState<boolean>(user.user?.privilege?);
 
  
@@ -40,9 +43,9 @@ export const UserIn: React.FC = () => {
     }
     else if(event.target.name === "password"){
         setPassword(event.target.value);
-    }  else if(user.user)
-    {setUserId(user.user?.userId)
-    }
+    } // else if(user.user) 
+    //  const userId = user.user?.userId;
+    
 //     else if(user.user?.privilege)
 //     {setPrivilege(user.user?.privilege)
 // }  
@@ -50,16 +53,16 @@ export const UserIn: React.FC = () => {
         
     const handleUpdate = (event:React.MouseEvent<HTMLButtonElement>) => {
         let credentials = {
-            userId,
-            firstName,
-            lastName,
+            id,
+            first,
+            last,
             username,
             email,
             password,
-            //privilege 
+            trust 
 
         };
-2
+
       dispatch(updateUser(credentials));
         
         
