@@ -118,6 +118,3 @@ public class Driver {
 
     }
 }
-
-// get("/logout", uc.handlelogout); {
-

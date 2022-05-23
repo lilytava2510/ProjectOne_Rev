@@ -11,12 +11,16 @@ public class UserDaoJDBC {
 
     ConnectionSingleton cs = ConnectionSingleton.getConnectionSingleton();
 
-    public void createUser(User user){
+    public void createUser(User user) {
         Connection c = cs.getConnection();
         String sql = "call create_user(?,?,?,?,?,?)";
         int x = 0;
-        try{
-            if(user.isPrivilege()){ x=1;}else{x=2;}
+        try {
+            if (user.isPrivilege()) {
+                x = 1;
+            } else {
+                x = 2;
+            }
             c.setAutoCommit(false);
             CallableStatement call = c.prepareCall(sql);
             call.setString(1, user.getUsername());
@@ -27,61 +31,75 @@ public class UserDaoJDBC {
             call.setInt(6, x);
             call.execute();
             c.setAutoCommit(true);
-        }catch(SQLException e){e.printStackTrace();}
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
-    public User getUserById(int id){
+    public User getUserById(int id) {
         Connection c = cs.getConnection();
         String sql = "select * from users where user_id = ?";
         User user = new User();
-        try{
+        try {
             PreparedStatement p = c.prepareStatement(sql);
             p.setInt(1, id);
             ResultSet rs = p.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 user.setUserId(rs.getInt(1));
                 user.setUsername(rs.getString(2));
                 user.setPassword(rs.getString(3));
                 user.setFirstName(rs.getString(4));
                 user.setLastName(rs.getString(5));
                 user.setEmail(rs.getString(6));
-                if(rs.getInt(7) == 1){
+                if (rs.getInt(7) == 1) {
                     user.setPrivilege(true);
-                }else{user.setPrivilege(false);}
+                } else {
+                    user.setPrivilege(false);
+                }
             }
-        }catch(SQLException e){e.printStackTrace();}
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return user;
     }
 
-    public User readUserByEmail(String email){
+    public User readUserByEmail(String email) {
         Connection c = cs.getConnection();
         String sql = "select * from users where email = ?";
         User user = new User();
-        try{
+        try {
             PreparedStatement p = c.prepareStatement(sql);
             p.setString(1, email);
             ResultSet rs = p.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 user.setUserId(rs.getInt(1));
                 user.setUsername(rs.getString(2));
                 user.setPassword(rs.getString(3));
                 user.setFirstName(rs.getString(4));
                 user.setLastName(rs.getString(5));
                 user.setEmail(rs.getString(6));
-                if(rs.getInt(7) == 1){
+                if (rs.getInt(7) == 1) {
                     user.setPrivilege(true);
-                }else{user.setPrivilege(false);}
+                } else {
+                    user.setPrivilege(false);
+                }
             }
-        }catch(SQLException e){e.printStackTrace();}
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return user;
     }
 
-    public User updateUser(User user){
+    public User updateUser(User user) {
         Connection c = cs.getConnection();
         String sql = "update users set username = ?, password = ?, first_name = ?, last_name = ?, email = ?, role_ = ? where user_id = ?";
         int x = 0;
-        try{
-            if(user.isPrivilege()){ x=1;}else{x=2;}
+        try {
+            if (user.isPrivilege()) {
+                x = 1;
+            } else {
+                x = 2;
+            }
             c.setAutoCommit(false);
             PreparedStatement p = c.prepareStatement(sql);
             p.setString(1, user.getUsername());
@@ -93,7 +111,7 @@ public class UserDaoJDBC {
             p.setInt(7, user.getUserId());
             p.execute();
             c.setAutoCommit(true);
-        }catch(SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }
@@ -101,53 +119,60 @@ public class UserDaoJDBC {
         return user;
     }
 
-    public void deleteUser(int id){
+    public void deleteUser(int id) {
         Connection c = cs.getConnection();
         String sql = "delete from users where user_id = ?";
-        try{
+        try {
             PreparedStatement p = c.prepareStatement(sql);
             p.setInt(1, id);
             p.execute();
-        }catch(SQLException e){e.printStackTrace();}
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
-    public User login(String users, String password){
+    public User login(String users, String password) {
         Connection c = cs.getConnection();
         String sql = "select * from users where email = ? and password = ?";
         User user = new User();
-        try{
+        try {
             PreparedStatement p = c.prepareStatement(sql);
             p.setString(1, users);
             p.setString(2, password);
             ResultSet rs = p.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 user.setUserId(rs.getInt(1));
                 user.setUsername(rs.getString(2));
                 user.setPassword(rs.getString(3));
                 user.setFirstName(rs.getString(4));
                 user.setLastName(rs.getString(5));
                 user.setEmail(rs.getString(6));
-                if(rs.getInt(7) == 1){
+                if (rs.getInt(7) == 1) {
                     user.setPrivilege(true);
-                }else{user.setPrivilege(false);}
+                } else {
+                    user.setPrivilege(false);
+                }
+
             }
-        }catch(SQLException e){e.printStackTrace();}
-        if(user.getUsername() == null){
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        if (user.getUsername() == null) {
             user = null;
         }
         return user;
     }
 
     public List<User> readAllEmployees() {
-        Connection c =cs.getConnection();
+        Connection c = cs.getConnection();
         String sql = "select * from users where role_ = 2";
-        List<User> holder= new ArrayList<>();
-        try{
+        List<User> holder = new ArrayList<>();
+        try {
             Statement p = c.createStatement();
             ResultSet rs = p.executeQuery(sql);
-            if(rs.wasNull()) {
+            if (rs.wasNull()) {
                 return null;
-            }else {
+            } else {
                 while (rs.next()) {
                     boolean x = false;
                     //if(rs.getInt(7) == 1){x = true;}else{x = false;}
@@ -156,7 +181,9 @@ public class UserDaoJDBC {
                 }
                 return holder;
             }
-        }catch(SQLException e){e.printStackTrace();}
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 

@@ -5,11 +5,15 @@ import {RootState, AppDispatch} from "../../Store";
 import { clearReim } from '../../Slices/ReimSlice';
 import { clearUser } from '../../Slices/UserSlice';
 //import defaultImage from '../../defaultpic.jpg';
+import { IReim } from '../../Interface/IReim';
+import { IUser } from '../../Interface/IUser';
 
 import './Navbar.css';
 
 
 export const Navbar: React.FC = () => {
+
+    
 
     const dispatch:AppDispatch = useDispatch();
 
@@ -34,7 +38,18 @@ export const Navbar: React.FC = () => {
                         <button className="logout-btn" onClick={handleLogout}>Log out</button>
                     </Link>
                 </li>
+                  {  user?.privilege?
+                 <li className="nav-item">
+                 <Link to= {"/pend"} className="nav-link">View Pending</Link>
+                 <li>
+                 <li className="nav-item">
+                    <Link to= {"/approve"} className="nav-link">View Approved</Link>
+                </li>
+                 </li>
+             </li>
+                : <></> }
             </ul>
+
         </nav>
         
     )

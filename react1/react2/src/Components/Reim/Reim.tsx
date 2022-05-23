@@ -11,28 +11,27 @@ export const Reim:React.FC<IReim> = (ticket:IReim) => {
 
      
     const user = useSelector((state:RootState) => state.user);
-    const [author, setUserId] = useState<number>(0);
-    const [status, setStatus] = useState<number>(0);
-    const [id, setReimId] = useState<number>(0);
-
+    
 
     const handleResolve = (event:React.MouseEvent<HTMLButtonElement>) => {
-         setStatus(parseInt((event.target as HTMLButtonElement).value));
-        //  setReimId(event.currentTarget?.getAttribute("data-id")) 
-         if(ticket.reimburse_id)
-         {setReimId(ticket.reimburse_id)
-         }
-        //  setUserId(user.user?.userId);
-         if(user.user)
-    {setUserId(user.user?.userId)
-    }           
-         let note = {
-             id,
-             author,
-             status
-         }
-                dispatch(editReim(note));
-            }
+        
+        const status = parseInt((event.target as HTMLButtonElement).value);
+        const id = ticket.reimburse_id;
+        
+      
+       
+       const author = user.user?.userId;
+       
+              
+        let note = {
+            id,
+            author,
+            status
+        }
+        console.log(note);
+               dispatch(editReim(note));
+           }
+    
         
 
             console.log(user.user?.privilege)

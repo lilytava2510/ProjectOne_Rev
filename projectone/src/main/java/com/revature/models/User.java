@@ -18,10 +18,9 @@ public class User {
 
     private String email;
 
-    private boolean privilege = false;
+    private boolean privilege;
 
     private List<Reimburse> history = new ArrayList<>();
-
 
     private List<User> registry = new ArrayList<>();
 
@@ -152,4 +151,3 @@ public class User {
                 '}';
     }
 }
-

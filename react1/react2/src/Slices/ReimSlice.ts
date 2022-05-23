@@ -22,9 +22,9 @@ type Tick = {
 }
 
 type Tack = {
-    id: number,
-    author: number,
-    status: number
+    id: any,
+    author: any,
+    status: any
 }
 
 export const writeReim = createAsyncThunk(
