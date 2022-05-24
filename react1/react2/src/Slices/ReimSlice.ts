@@ -33,7 +33,9 @@ export const writeReim = createAsyncThunk(
          try{
               const res = await axios.post('http://localhost:8080/reimburse/create',ticket);
         
-        return  ticket;
+        return  {
+                
+        }
 
         } catch(e){
             return thunkAPI.rejectWithValue('Wrong login try again');
@@ -46,7 +48,7 @@ export const editReim = createAsyncThunk(
     async(ticket:Tack, thunkAPI) => {
          try{
               const res = await axios.put('http://localhost:8080/reimburse/edit',ticket);
-        
+                    console.log(ticket);
         return  {
                 
         }

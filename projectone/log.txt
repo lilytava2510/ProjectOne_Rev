@@ -1,0 +1,2 @@
+2022-05-23 17:55:15 WARN  LoggingUtil:39 - improper attempt at login on email: @gmail
+2022-05-23 19:31:23 WARN  LoggingUtil:39 - improper attempt at login on email: @gmail

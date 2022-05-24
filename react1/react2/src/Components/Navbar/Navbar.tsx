@@ -13,8 +13,7 @@ import './Navbar.css';
 
 export const Navbar: React.FC = () => {
 
-    
-
+ 
     const dispatch:AppDispatch = useDispatch();
 
     const handleLogout = () => {
@@ -25,39 +24,52 @@ export const Navbar: React.FC = () => {
      const handleLink = () =>{
         dispatch(clearReim());
     }
-    return( 
-        <nav className="navbar">
-       
-            <ul>
-                <li className="nav-item">
-                    <Link to= {"/info"} className="nav-link">Profile</Link>
-                </li>
-                <li className="nav-item">
-                    <Link to= {"/feed"} className="nav-link">Home</Link>
-                </li>
-                <li className="logout">
-                    <Link to={"/login"}>
-                        <button className="logout-btn" onClick={handleLogout}>Log out</button>
-                    </Link>
-                </li>
-                  {  user?.privilege?
-                 <li className="nav-item">
-               <Link to= {"/pend"} className="nav-link">
-                     <button className="link-btn" onClick={handleLink}>View Pending</button>
+     
+        return( 
+            <nav className="navbar">
+           
+                <table>
+                    <tr>
+                    <td className="inav-item">
+                        <Link to= {"/info"} className="inav-link">Profile</Link>
+                    </td>
+                    <td className="inav-item">
+                        <Link to= {"/feed"} className="inav-link">Home</Link>
+                    </td>
+                    <td className="ilogout">
+                        <Link to={"/login"}>
+                            <button className="ilogout-btn" onClick={handleLogout}>Log out</button>
+                        </Link>
+                    </td>
+                    <td className="inav-item">
+                        <Link to= {"/uinfo"} className="inav-link" onClick={handleLink}>Your Approved</Link>
+                    </td>
+                    <td className="inav-item">
+                        <Link to= {"/ufeed"} className="inav-link" onClick={handleLink}>Your Pending</Link>
+                    </td>
+                    <td>
+                    {  user?.privilege?
+                     <li className="inav-item">
+                     <Link to= {"/pend"} className="inav-link">
+                         <button className="ilogout-btn" onClick={handleLink}>Pending</button>
+                         </Link>
+                     
+                     <li className="inav-item">
+                        <Link to= {"/approve"} className="inav-link">
+                        <button className="ilogout-btn" onClick={handleLink}>Approved</button>
+                        </Link>
+                    </li>
+                     <li className="inav-item">
+                     <Link to= {"/people"} className="nav-link">
+                     <button className="ilogout-btn" onClick={handleLink}>People</button>
                      </Link>
-                 <li>
-                 <li className="nav-item">
-                    <Link to= {"/approve"} className="nav-link">
-                    <button className="link-btn" onClick={handleLink}>View Approved</button>
-                    </Link>
-                </li>
                  </li>
-             </li>
-                : <></> }
-            </ul>
-
-        </nav>
-        
-    )
-
-}
+                 </li>
+                    : <></> }
+                    </td>
+                    </tr>
+                </table>
+            </nav>
+            
+        )
+                    }

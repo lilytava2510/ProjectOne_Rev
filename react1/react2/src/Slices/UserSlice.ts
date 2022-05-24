@@ -1,13 +1,14 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 import {IUser} from "../Interface/IUser";
 import axios from "axios";
-import { userInfo } from "os";
 
 interface UserSliceState {
     loading: boolean,
     error: boolean,
-    user?: IUser
-    currentProfile?: IUser
+    user?: IUser,
+    currentProfile?: IUser,
+    people?: IUser[]
+
 }
 
 
@@ -27,7 +28,7 @@ type Paper = {
     username: string,
     email: string,
     password: string,
-   trust: boolean
+    trust: boolean
 }
 
 export const loginUser = createAsyncThunk(
@@ -35,7 +36,7 @@ export const loginUser = createAsyncThunk(
     async(credentials:Login, thunkAPI) => {
          try{
               const res = await axios.post('http://localhost:8080/users/login',credentials);
-              console.log(res.data.privilege);
+        
         return  {
                   userId: res.data.userId,
                   firstName: res.data.firstName,
@@ -68,10 +69,24 @@ export const getUser = createAsyncThunk(
 
   export const updateUser = createAsyncThunk(
     "user/update",
-    async (credentials:Paper, thunkAPI) => {
+    async (paper:Paper, thunkAPI) => {
         try{
-              axios.defaults.withCredentials = true;
-            const res = await axios.put(`http://localhost:8080/users/update`,credentials);
+              //axios.defaults.withCredentials = true;
+            const res = await axios.put(`http://localhost:8080/users/update`, paper);
+  
+            return res.data;
+        } catch (e){
+            console.log(e);
+        }
+    }  
+  );
+
+  export const getPeople = createAsyncThunk(
+    "user/registry",
+    async ( thunkAPI) => {
+        try{
+              //axios.defaults.withCredentials = true;
+            const res = await axios.get(`http://localhost:8080/users/registry`);
   
             return res.data;
         } catch (e){
@@ -88,7 +103,12 @@ export const UserSlice = createSlice({
             state.error = !state.error;
         },
         clearUser: (state) => {
-            state.user = undefined
+            state.user = undefined;
+            state.currentProfile = undefined;
+            state.people = undefined;
+        },
+        clearHold: (state) => {
+            state.currentProfile = undefined;
         }
     }, 
     extraReducers: (builder) => {
@@ -99,7 +119,6 @@ export const UserSlice = createSlice({
             state.user = action.payload;
             state.error = false;
             state.loading = false;
-            console.log(state.user.privilege);
                 });
 
         builder.addCase(loginUser.rejected, (state, action) => {
@@ -119,9 +138,35 @@ export const UserSlice = createSlice({
                 state.error = true;
                 state.loading = false;
                 });
+        builder.addCase(getPeople.pending, (state, action) => {
+            state.loading = true;
+        });
+        builder.addCase(getPeople.fulfilled, (state, action) => {
+            state.people = action.payload;
+            state.error = false;
+            state.loading = false;
+                });
+
+        builder.addCase(getPeople.rejected, (state, action) => {
+            state.error = true;
+            state.loading = false;
+        });
+        builder.addCase(getUser.pending, (state, action) => {
+            state.loading = true;
+        });
+        builder.addCase(getUser.fulfilled, (state, action) => {
+            state.currentProfile = action.payload;
+            state.error = false;
+            state.loading = false;
+                });
+
+        builder.addCase(getUser.rejected, (state, action) => {
+                state.error = true;
+                state.loading = false;
+                });
     }
 })
 
-   export const {toggleError, clearUser} = UserSlice.actions;
+   export const {toggleError, clearUser, clearHold} = UserSlice.actions;
 
 export default UserSlice.reducer;

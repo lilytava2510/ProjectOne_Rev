@@ -1,0 +1,18 @@
+:root {
+    --bg: #6C0BA9;
+    --dark: #DC9202;
+    --btn-blue: #b33000;
+    --accent: #FED000;
+    --text-white: #FBFBFB;
+}
+
+.reim {
+    text-align: center;
+    color:var(--dark);
+    
+   
+}
+.crea {
+    text-align: center;
+    color:var(--dark);
+}

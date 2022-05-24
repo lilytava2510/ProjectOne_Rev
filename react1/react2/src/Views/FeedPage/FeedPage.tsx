@@ -9,7 +9,7 @@ import {IUser} from "../../Interface/IUser";
 import {IReim} from "../../Interface/IReim";
 import {getReim} from "../../Slices/ReimSlice";
 import { CreatePage } from '../../Components/ReimCreate/ReimCreate';
-
+import './FeedPage.css';
 export const FeedPage: React.FC = () => {
 
     const userInfo = useSelector((state:RootState) => state.user);
@@ -30,19 +30,19 @@ export const FeedPage: React.FC = () => {
     return(
         <>
            <Navbar />
-           <h1> Welcome: {userInfo.user?.firstName}</h1>
-           <h2> FeedPage</h2>
-           <table>
-               <tr>
-                   <th>Reimbursement #</th>
-                   <th>Reimbursement amount</th>
-                   <th>Subimtion Date</th>
-                   <th>Resolution Date</th>
-                   <th>Reimbursement Description</th>
-                   <th>Reimbursement Author</th>
-                   <th>Reimbursement Manager</th>
-                   <th>Reimbursement Status</th>
-                   <th>Reimbursement Type</th>
+           <h1 className="rei"> Welcome: {userInfo.user?.firstName}</h1>
+           <h2 className="rei"> All Your Reimbursements</h2>
+           <table className="reim">
+               <tr >
+                   <th> #           </th>
+                   <th>Amount       </th>
+                   <th>Subimtion    </th>
+                   <th>Resolution   </th>
+                   <th> Description </th>
+                   <th>Author       </th>
+                   <th> Manager     </th>
+                   <th> Status      </th>
+                   <th> Type        </th>
                </tr>
            {reimState.reimburse?
             reimState.reimburse.map((post:IReim)=> {

@@ -10,7 +10,7 @@ import {IReim} from "../../Interface/IReim";
 import {getReim} from "../../Slices/ReimSlice";
 import { getUser } from '../../Slices/UserSlice';
 import { UserIn } from '../../Components/UserInfo/UserInfo';
-
+import './Createpage.css';
 export const CreatePage: React.FC = () => {
 
     const userInfo = useSelector((state:RootState) => state.user);
@@ -32,13 +32,17 @@ export const CreatePage: React.FC = () => {
         <>
 
            <Navbar />
-           <h1> Welcome: {userInfo.user?.firstName}</h1>
-           <h2> Page</h2>
-           <table>
+           <h1 className="crea"> Welcome: {userInfo.user?.firstName}</h1>
+           <h2 className="crea"> Update Page</h2>
+           <table className="crea" >
                <tr>
-                   <th>amount</th>
-                   <th>Description</th>
-                   <th>Date</th>
+                   <th>userId</th>
+                   <th>firstname</th>
+                   <th>Lastname</th>
+                   <th>Email</th>
+                   <th>Username</th>
+                   <th>Password</th>
+                
              
                </tr>
 
@@ -49,7 +53,7 @@ export const CreatePage: React.FC = () => {
                 <td>{userInfo.user?.email}</td>
                 <td>{userInfo.user?.username}</td>
                 <td>{userInfo.user?.password}</td>
-                <td>{userInfo.user?.privilege}</td>
+                
                
             </tr>
 
