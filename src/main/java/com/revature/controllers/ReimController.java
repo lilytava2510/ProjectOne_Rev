@@ -1,10 +1,12 @@
 package com.revature.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.models.RegisterObject;
 import com.revature.models.ReimObject;
 import com.revature.models.Reimburse;
 import com.revature.models.User;
 import com.revature.services.ReimService;
+import com.revature.utils.LoggingUtil;
 import io.javalin.http.Handler;
 
 
@@ -20,44 +22,58 @@ public class ReimController {
     }
 
     public Handler handleCreateReim = (ctx) -> {
-        if (ctx.req.getSession().getAttribute("id") == null) {
-            ctx.status(401);
-            ctx.result("You must log in to request a reimbursement");
-        } else {
-            int reimburserId = Integer.parseInt((String) ctx.req.getSession().getAttribute("id"));
-            User u = new User();
+//       if (ctx.req.getSession().getAttribute("id") == null) {
+//            ctx.status(401);
+//            ctx.result("You must log in to request a reimbursement");
+//        } else {
+            //int reimburserId = Integer.parseInt((String) ctx.req.getSession().getAttribute("id"));
+            //User u = new User();
+        //int id = Integer.parseInt(ctx.pathParam("id"));
             ReimObject r = om.readValue(ctx.body(), ReimObject.class);
-            u.setUserId(r.author);
-            rs.addReimburse(r.amount, r.submission, r.description, r.author, r.type);
-        }
+            //u.setUserId(r.author);
+            rs.addReimburse(r.amount, r.description,r.author, r.type);
+       // }
 
     };
     public Handler handleViewTickets = (ctx) -> {
-        if (ctx.req.getSession().getAttribute("id") == null) {
-            ctx.status(401);
+        int id = Integer.parseInt(ctx.pathParam("id"));
+        if (id == 0) {
+            LoggingUtil.logger.warn("improper attempt at view of reimbursement");
+            ctx.status(402);
             ctx.result("Please log in to view tickets.");
         } else {
-            int reimburserId = Integer.parseInt((String) ctx.req.getSession().getAttribute("id"));
 
-            ctx.result(om.writeValueAsString(rs.ReadReimburse(reimburserId)));
+        //RegisterObject ro = om.readValue(ctx.body(), RegisterObject.class);
+
+            ctx.result(om.writeValueAsString(rs.readReimburse(id)));
         }
 
     };
     public Handler handleUpdateReim = (ctx) -> {
-        Reimburse r = om.readValue(ctx.body(), Reimburse.class);
-        System.out.print(r);
-        ctx.result(om.writeValueAsString(rs.updateReim(r)));
+        //int id = Integer.parseInt(ctx.pathParam("id"));
+//        if (id == 0) {
+//            ctx.status(409);
+//            ctx.result("Please log in to view alter tickets.");
+//        } else {
+
+            ReimObject ro = om.readValue(ctx.body(), ReimObject.class);
+            System.out.println(ro.id+""+ro.author+""+ro.status);
+            ctx.result(om.writeValueAsString(rs.updateReim(ro.id, ro.author, ro.status)));
+
+        //}
     };
 
 
     public Handler handleUserApprove = (ctx) -> {
-        if (ctx.req.getSession().getAttribute("id") == null) {
-            ctx.status(401);
+        int id = Integer.parseInt(ctx.pathParam("id"));
+        if (id == 0) {
+            LoggingUtil.logger.warn("improper attempt at view of approved reimbursements");
+            ctx.status(403);
             ctx.result("Please log in to view approved tickets.");
         } else {
-            int reimburserId = Integer.parseInt((String) ctx.req.getSession().getAttribute("id"));
 
-            ctx.result(om.writeValueAsString(rs.ReadReimburse(reimburserId)));
+        //RegisterObject ro = om.readValue(ctx.body(), RegisterObject.class);
+            ctx.result(om.writeValueAsString(rs.getApprovedId(id)));
 
 
         }
@@ -65,43 +81,80 @@ public class ReimController {
 
 
     public Handler handleUserPend = (ctx) -> {
-        if (ctx.req.getSession().getAttribute("id") == null) {
-            ctx.status(401);
+        int id = Integer.parseInt(ctx.pathParam("id"));
+        if (id == 0) {
+            LoggingUtil.logger.warn("improper attempt at view of pending reimbursements");
+            ctx.status(404);
             ctx.result("Log in in order to view the status of your tickets.");
         } else {
-            int reimburserId = Integer.parseInt((String) ctx.req.getSession().getAttribute("id"));
-            Reimburse r = om.readValue(ctx.body(), Reimburse.class);
-            System.out.print(r);
-            ctx.result(om.writeValueAsString(rs.getPendingId(reimburserId)));
+
+        //RegisterObject ro = om.readValue(ctx.body(), RegisterObject.class);
+
+            ctx.result(om.writeValueAsString(rs.getPendingId(id)));
         }
 
     };
 
     public Handler handleGetAllAprrove = (ctx) -> {
-        if (ctx.req.getSession().getAttribute("id") == null) {
-            ctx.status(401);
-            ctx.result("Log in in order to change the status of user tickets.");
-        } else {
-            Reimburse r = om.readValue(ctx.body(), Reimburse.class);
-            System.out.print(r);
-            ctx.result(om.writeValueAsString(rs.updateReim(r)));
-        }
+//        if (ctx.req.getSession().getAttribute("id") == null) {
+//            ctx.status(405);
+//            ctx.result("Log in in order to change the status of user tickets.");
+//        } else {
+
+            ctx.result(om.writeValueAsString(rs.getAllApprove()));
+       // }
 
 
     };
     public Handler handlegetAllPend = (ctx) -> {
-        if (ctx.req.getSession().getAttribute("id") == null) {
-            ctx.status(401);
-            ctx.result("Log in in order to change the status of user tickets.");
-        } else {
-            Reimburse r = om.readValue(ctx.body(), Reimburse.class);
-            System.out.print(r);
-            ctx.result(om.writeValueAsString(rs.updateReim(r)));
-        }
+//        if (ctx.req.getSession().getAttribute("id") == null) {
+//            ctx.status(406);
+//            ctx.result("Log in in order to change the status of user tickets.");
+//        } else {
+
+            ctx.result(om.writeValueAsString(rs.getAllPend()));
+       // }
 
 
     };
 
-}              // HAndler handleViewAll
-
-                // Handlehandleapproved
+}
+//package com.revature.controllers;
+//
+//import com.fasterxml.jackson.databind.ObjectMapper;
+//import com.revature.models.ReimObject;
+//import com.revature.services.ReimService;
+//import io.javalin.http.Handler;
+//
+//public class ReimController {
+//
+//    private ReimService rs;
+//    private ObjectMapper om;
+//
+//    public ReimController(ReimService rs){
+//        this.rs =rs;
+//        this.om = new ObjectMapper();
+//
+//    }
+//
+//
+//    public Handler handleCreateReim = (ctx) -> {
+//
+//            if (ctx.req.getSession().getAttribute("id") == null) {
+//                ctx.status(401);
+//                ctx.result("You must log in to request a reimbursement");
+//            } else {
+//                int reimburserId = Integer.parseInt((String) ctx.req.getSession().getAttribute("id"));
+//
+//
+//
+//                ReimObject r = om.readValue(ctx.body(), ReimObject.class);
+//                rs.addReimburse(r.amount, r.description, r.author, r.type);
+//            }
+//    };
+//
+//
+//
+//
+//
+//   }

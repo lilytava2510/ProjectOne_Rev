@@ -1,0 +1,36 @@
+
+P
+java:S1854"5Remove this useless assignment to local variable "c".(ÎüŒ…úÿÿÿÿ
+A
+java:S1481"&Remove this unused "c" local variable.(ÎüŒ…úÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(œ”†€
+Q	java:S125"<This block of commented-out lines of code should be removed.(ÒµÎ’
+Q	java:S125!"<This block of commented-out lines of code should be removed.(¸à˜
+V	java:S125#"<This block of commented-out lines of code should be removed.(È¾Ó÷ıÿÿÿÿ
+V	java:S125%"<This block of commented-out lines of code should be removed.(ê²”Õüÿÿÿÿ
+V	java:S125'"<This block of commented-out lines of code should be removed.(õõÎ½şÿÿÿÿ
+Q	java:S125)"<This block of commented-out lines of code should be removed.(ÁÿÖ
+V	java:S125+"<This block of commented-out lines of code should be removed.(¾¹ƒ÷şÿÿÿÿ
+V	java:S1251"<This block of commented-out lines of code should be removed.(¶ú§­ùÿÿÿÿ
+V	java:S1253"<This block of commented-out lines of code should be removed.(˜ºªìüÿÿÿÿ
+Q	java:S1256"<This block of commented-out lines of code should be removed.(«Û
+Q	java:S1258"<This block of commented-out lines of code should be removed.(–ÃÆˆ
+Q	java:S125;"<This block of commented-out lines of code should be removed.(·‘›è
+Q	java:S125="<This block of commented-out lines of code should be removed.(ªÉí
+Q	java:S125C"<This block of commented-out lines of code should be removed.( ÃŸ×
+Q	java:S125G"<This block of commented-out lines of code should be removed.(°èœ›
+Q	java:S125I"<This block of commented-out lines of code should be removed.( ‹È¥
+V	java:S125K"<This block of commented-out lines of code should be removed.(¬‡âïúÿÿÿÿ
+V	java:S125M"<This block of commented-out lines of code should be removed.(Æµ­Äüÿÿÿÿ
+Q	java:S125O"<This block of commented-out lines of code should be removed.(ï¿è’
+G
+java:S1602S",Remove useless curly braces around statement(ÒÌâ–øÿÿÿÿ
+n
+java:S1612R"SReplace this lambda with method reference 'JavalinConfig::enableCorsForAllOrigins'.(ù„áûüÿÿÿÿ
+]	java:S125V"<This block of commented-out lines of code should be removed.(Ğ§£Éÿÿÿÿÿ8²òÅ¹0
+\
+java:S1128":Remove this unused import 'com.revature.models.Reimburse'.(ÉõÙÔøÿÿÿÿ8•ù•¸0
+W
+java:S1128"5Remove this unused import 'com.revature.models.User'.(òÒš»ûÿÿÿÿ8•ù•¸0
+G
+java:S1128"*Remove this unused import 'java.sql.Date'.(ÙÀ½Ê8–ù•¸0

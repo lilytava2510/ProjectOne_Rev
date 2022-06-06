@@ -1,0 +1,38 @@
+
+p
+java:S1104"ZMake handleRegister a static final constant or non-public and provide accessors if needed.(ÿ§¶
+m
+java:S1104""WMake handleLogin a static final constant or non-public and provide accessors if needed.(Öª‰
+r
+java:S11044"\Make handleUpdateUser a static final constant or non-public and provide accessors if needed.(¢ÓäŒ
+r
+java:S1104<"\Make handleDeleteUser a static final constant or non-public and provide accessors if needed.(ÌØ†¿
+s
+java:S1104J"]Make handleAllEmployee a static final constant or non-public and provide accessors if needed.(µÈâˆ
+x
+java:S1104N"]Make handleGetUserInfo a static final constant or non-public and provide accessors if needed.(âÏ§øÿÿÿÿ
+s
+java:S1104\"XMake handleLogout a static final constant or non-public and provide accessors if needed.(Ö€ãøÿÿÿÿ
+G
+java:S1611"1Remove the parentheses around the "ctx" parameter(ÿ§¶
+Q	java:S125"<This block of commented-out lines of code should be removed.(ªáäÏ
+G
+java:S1611""1Remove the parentheses around the "ctx" parameter(Öª‰
+Q	java:S125+"<This block of commented-out lines of code should be removed.(–ôû
+V	java:S1250"<This block of commented-out lines of code should be removed.(î§Àçùÿÿÿÿ
+G
+java:S16114"1Remove the parentheses around the "ctx" parameter(¢ÓäŒ
+G
+java:S1611<"1Remove the parentheses around the "ctx" parameter(ÌØ†¿
+V	java:S125B"<This block of commented-out lines of code should be removed.(¹ƒíÊùÿÿÿÿ
+G
+java:S1611J"1Remove the parentheses around the "ctx" parameter(µÈâˆ
+B
+java:S1602J",Remove useless curly braces around statement(µÈâˆ
+L
+java:S1611N"1Remove the parentheses around the "ctx" parameter(âÏ§øÿÿÿÿ
+V	java:S125P"<This block of commented-out lines of code should be removed.(…ÇÙÿÿÿÿÿ
+V	java:S125S"<This block of commented-out lines of code should be removed.(Šúêùÿÿÿÿ
+V	java:S125W"<This block of commented-out lines of code should be removed.(¹ƒíÊùÿÿÿÿ
+L
+java:S1611\"1Remove the parentheses around the "ctx" parameter(Ö€ãøÿÿÿÿ

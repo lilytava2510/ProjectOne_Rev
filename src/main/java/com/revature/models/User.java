@@ -1,7 +1,8 @@
 package com.revature.models;
 
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class User {
 
@@ -18,7 +19,10 @@ public class User {
     private String email;
 
     private boolean privilege = false;
-    private SortedSet<Reimburse> history = new TreeSet<>();
+
+    private List<Reimburse> history = new ArrayList<>();
+
+    private List<User> registry = new ArrayList<>();
 
     public User() {
 
@@ -40,11 +44,8 @@ public class User {
         this.firstName = firstname;
         this.lastName=lastname;
         this.email=email;
-    }
-    public User( String password, String email){
-            this.email = email;
-            this.password = password;
-    }
+
+  }
     public User(int userId, String username, String password, String firstname, String lastname, String email){
         this.userId = userId;
         this.username = username;
@@ -52,13 +53,27 @@ public class User {
         this.firstName = firstname;
         this.lastName=lastname;
         this.email=email;
+}
+
+    public User(int userId, String username, String password, String firstName, String lastName, String email, boolean privilege) {
+        this.userId = userId;
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.privilege = privilege;
     }
 
-public int  getUserId(){
+    public User(int userId) {
+        this.userId = userId;
+    }
+
+    public int getUserId(){
     return userId;
     }
 
-    public void setUserId(int UserId){
+    public void setUserId(int userId){
         this.userId = userId;
     }
 
@@ -81,7 +96,6 @@ public int  getUserId(){
     public void setFirstName(String firstName){
         this.firstName = firstName;
     }
-
     public String getLastName(){
         return lastName;
     }
@@ -100,22 +114,33 @@ public int  getUserId(){
     public boolean isPrivilege() {
         return privilege;
     }
-    public void setPrivilege(boolean privilege){
-        this.privilege=privilege;
+
+    public void setPrivilege(boolean privilege) {
+        this.privilege = privilege;
     }
 
-    public SortedSet<Reimburse> getHistory() {
+    public List<Reimburse> getHistory() {
         return history;
     }
 
-    public void setHistory(SortedSet<Reimburse> history) {
+    public void setHistory(List<Reimburse> history) {
         this.history = history;
+    }
+
+    public List<User> getRegistry() {
+        return registry;
+    }
+
+    public void setRegistry(List<User> registry) {
+        this.registry = registry;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "userId='" + userId + '\'' +
+                ", user='" + username + '\'' +
+                ", trust='" + privilege + '\'' +
                 "firstname='" + firstName + '\'' +
                 ", lastname='" + lastName + '\'' +
                 ", email='" + email + '\'' +

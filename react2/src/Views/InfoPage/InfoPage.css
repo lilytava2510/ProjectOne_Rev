@@ -1,0 +1,18 @@
+:root {
+    --bg: #6C0BA9;
+    --dark: #DC9202;
+    --btn-blue: #b33000;
+    --accent: #FED000;
+    --text-white: #FBFBFB;
+}
+
+.info {
+    text-align: center;
+    color:var(--dark);
+    
+   
+}
+.page {
+    text-align: center;
+    color:var(--dark);
+}

@@ -8,6 +8,10 @@ public class RegisterObject {
     public String last;
     public String email;
 
+    public int id;
+
+    public boolean trust;
+
 
 
     @Override

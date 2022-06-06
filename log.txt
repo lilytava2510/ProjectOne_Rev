@@ -1,0 +1,8 @@
+2022-05-23 17:24:30 INFO  LoggingUtil:26 - New reimbursement made
+2022-05-24 08:26:35 WARN  LoggingUtil:39 - improper attempt at login on email: 
+2022-05-24 09:37:30 INFO  LoggingUtil:26 - New reimbursement made
+2022-05-24 11:15:51 INFO  LoggingUtil:26 - New reimbursement made
+2022-05-24 11:18:52 INFO  LoggingUtil:26 - New reimbursement made
+2022-05-24 11:52:24 INFO  LoggingUtil:26 - New reimbursement made
+2022-06-06 12:46:33 INFO  LoggingUtil:26 - New reimbursement made
+2022-06-06 12:50:42 WARN  LoggingUtil:39 - improper attempt at login on email: a

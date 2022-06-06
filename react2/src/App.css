@@ -1,0 +1,24 @@
+:root {
+  --bg: #6C0BA9;
+  --dark: #DC9202;
+  --btn-blue: #b33000;
+  --accent: #FED000;
+  --text-white: #FBFBFB;
+}
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+}
+.App{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+}
+body {
+  background-color: var(--bg);
+}

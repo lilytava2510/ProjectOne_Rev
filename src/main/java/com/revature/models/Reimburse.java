@@ -4,109 +4,168 @@ import java.sql.Date;
 
 public class Reimburse {
 
-  private int reimburse_id;
+    private int reimburse_id;
 
-  private double amount;
-  private Date submission;
-  private Date resolution;
-  private String description;
-  private int author;
-  private int manager;
-  private int status;
-  private int type;
-
-  public Reimburse(){}
-
-public Reimburse( double amount, Date submission, String description, int author, int type) {
- this.amount=amount;
-  this.submission = submission;
-  this.description =description;
-  this.author=author;
-  this.type=type;
-}
-
-  public Reimburse(int reimburse_id, double amount, Date submission, Date resolution, String description, int author, int manager, int status, int type) {
-    this.amount=amount;
-    this.reimburse_id = reimburse_id;
-    this.submission = submission;
-    this.description =description;
-    this.author=author;
-    this.manager=manager;
-    this.status=status;
-    this.type=type;
-    this.resolution=resolution;
-  }
+    private double amount;
+    private Date submission;
+    private String start;
+    private String end;
+    private Date resolution;
+    private String description;
+    private int author;
+    private int manager = 1;
+    private int status;
+    private int type;
 
 
-  public int getReimburse_id() {
-    return reimburse_id;
-  }
+    public Reimburse() {
 
-  public void setReimburse_id(int reimburse_id) {
-    this.reimburse_id = reimburse_id;
-  }
+    }
 
-  public double getAmount() {
-    return amount;
-  }
+    public Reimburse(Date resolution, int manager, int status) {
+        this.resolution = resolution;
+        this.manager = manager;
+        this.status = status;
+    }
 
-  public void setAmount(double amount) {
-    this.amount = amount;
-  }
+    public Reimburse(int reimburse_id, Date resolution, int manager, int status) {
+        this.reimburse_id = reimburse_id;
+        this.resolution = resolution;
+        this.manager = manager;
+        this.status = status;
+    }
 
-  public Date getSubmission() {
-    return submission;
-  }
+    public Reimburse(double amount, Date submission, Date resolution, String description, int author, int type) {
+        this.amount=amount;
+        this.submission = submission;
+        this.description =description;
+        this.author=author;
+        this.type=type;
+    }
 
-  public void setSubmission(Date submission) {
-    this.submission = submission;
-  }
+    public Reimburse(int reimburse_id, double amount, Date submission, Date resolution, String description, int author, int manager, int status, int type) {
+        this.amount=amount;
+        this.reimburse_id = reimburse_id;
+        this.submission = submission;
+        this.description =description;
+        this.author=author;
+        this.manager=manager;
+        this.status=status;
+        this.type=type;
+        this.resolution=resolution;
+    }
 
-  public Date getResolution() {
-    return resolution;
-  }
+    public Reimburse(double amount, Date submission, String description, int author, int status, int type) {
+        this.amount = amount;
+        this.submission = submission;
+        this.description = description;
+        this.author = author;
+        this.status = status;
+        this.type = type;
+    }
 
-  public void setResolution(Date resolution) {
-    this.resolution = resolution;
-  }
+    public int getReimburse_id() {
+        return reimburse_id;
+    }
 
-  public String getDescription() {
-    return description;
-  }
+    public void setReimburse_id(int reimburse_id) {
+        this.reimburse_id = reimburse_id;
+    }
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
+    public double getAmount() {
+        return amount;
+    }
 
-  public int getAuthor() {
-    return author;
-  }
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
 
-  public void setAuthor(int author) {
-    this.author = author;
-  }
+    public Date getSubmission() {
+        return submission;
+    }
 
-  public int getManager() {
-    return manager;
-  }
+    public void setSubmission(Date submission) {
+        this.submission = submission;
+    }
 
-  public void setManager(int manager) {
-    this.manager = manager;
-  }
+    public Date getResolution() {
+        return resolution;
+    }
 
-  public int getStatus() {
-    return status;
-  }
+    public void setResolution(Date resolution) {
+        this.resolution = resolution;
+    }
 
-  public void setStatus(int status) {
-    this.status = status;
-  }
+    public String getDescription() {
+        return description;
+    }
 
-  public int getType() {
-    return type;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-  public void setType(int type) {
-    this.type = type;
-  }
+    public int getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(int author) {
+        this.author = author;
+    }
+
+    public int getManager() {
+        return manager;
+    }
+
+    public void setManager(int manager) {
+        this.manager = manager;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public String getStart() {
+        return start;
+    }
+
+    public void setStart(String start) {
+        this.start = start;
+    }
+
+    public String getEnd() {
+        return end;
+    }
+
+    public void setEnd(String end) {
+        this.end = end;
+    }
+
+    @Override
+    public String toString() {
+        return "reim{" +
+                "Id='" + reimburse_id + '\'' +
+                "amount='" + amount + '\'' +
+                ", date='" + submission + '\'' +
+                ", date='" + resolution + '\'' +
+                ", des='" + description + '\'' +
+                "au='" + author + '\'' +
+                ", ma='" + manager + '\'' +
+                ", st='" + status + '\'' +
+                ", ty='" + type + '\'' +
+
+
+                '}';
+    }
 }
