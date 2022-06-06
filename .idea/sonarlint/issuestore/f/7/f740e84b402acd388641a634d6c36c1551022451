@@ -1,24 +1,24 @@
 
 f
 java:S11922"KDefine a constant instead of duplicating this literal "yyyy-MM-dd" 7 times.(ε‚ΰψÿÿÿÿ
-e
-java:S2095z"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
 f
 java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
 e
-java:S2095*"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
-f
-java:S2095†"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
+java:S2095H"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
 f
 java:S2095Μ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
 e
 java:S2095a"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
 e
+java:S2095z"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
+e
+java:S2095*"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
+f
+java:S2095†"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
+e
 java:S2095"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(Θαϊ”
 f
 java:S2095ι"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
-e
-java:S2095H"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†σω±
 A
 java:S1168."+Return an empty collection instead of null.(¥Ήο
 A

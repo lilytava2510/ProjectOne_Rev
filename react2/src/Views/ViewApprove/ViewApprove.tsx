@@ -7,8 +7,8 @@ import {Loading} from "../../Components/Loading/Loading";
 import {Reim} from "../../Components/Reim/Reim";
 import {IUser} from "../../Interface/IUser";
 import {IReim} from "../../Interface/IReim";
-import {allApproveReim} from "../../Slices/ReimSlice";
-
+import {allPendReim, allApproveReim} from "../../Slices/ReimSlice";
+import './ViewApprove.css'
 export const ApprovePage: React.FC = () => {
 
     const userInfo = useSelector((state:RootState) => state.user);
@@ -32,19 +32,19 @@ export const ApprovePage: React.FC = () => {
     return(
         <>
            <Navbar />
-           <h1> Welcome: {userInfo.user?.firstName}</h1>
-           <h2> Manager Page</h2>
-           <table>
+           <h1 className="eal"> Welcome Umpa Lumba: {userInfo.user?.firstName}</h1>
+           <h2 className="eal" > Approved Reimburements </h2>
+           <table className="eal">
                <tr>
-                   <th>Reimbursement #</th>
-                   <th>Reimbursement amount</th>
-                   <th>Subimtion Date</th>
-                   <th>Resolution Date</th>
-                   <th>Reimbursement Description</th>
-                   <th>Reimbursement Author</th>
-                   <th>Reimbursement Manager</th>
-                   <th>Reimbursement Status</th>
-                   <th>Reimbursement Type</th>
+               <th> #           </th>
+                   <th>Amount       </th>
+                   <th>Subimtion    </th>
+                   <th>Resolution   </th>
+                   <th> Description </th>
+                   <th>Author       </th>
+                   <th> Manager     </th>
+                   <th> Status      </th>
+                   <th> Type        </th>
                </tr>
            {reimState.reimburse?
             reimState.reimburse.map((post:IReim)=> {

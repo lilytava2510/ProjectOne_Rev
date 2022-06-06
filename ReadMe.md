@@ -1,0 +1,2 @@
+This is an application for employees of the false company to create and see thier pending and approved reimbursements.
+Managers are hard coded and have the added ability to update the status of those reimbursements as well as see individual employe accounts.

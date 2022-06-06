@@ -1,7 +1,10 @@
-import React, {useState} from "react";
+import { setDefaultResultOrder } from 'dns';
+import React, {useState} from 'react';
+//import "./LoginForm.css";
+import { loginUser,toggleError, updateUser } from '../../Slices/UserSlice';
 import {RootState, AppDispatch} from "../../Store";
-import { updateUser } from "../../Slices/UserSlice";
 import {useDispatch, useSelector} from "react-redux";
+import './UserInfo.css';
 
 export const UserIn: React.FC = () => {
     
@@ -18,7 +21,7 @@ export const UserIn: React.FC = () => {
     const [username, setUsername] = useState<string>("");
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
-    const trust = true;
+    const trust = false;
 
     const id = user.user?.userId;
     //const [privilege, setPrivilege] = useState<boolean>(user.user?.privilege?);
@@ -65,9 +68,9 @@ export const UserIn: React.FC = () => {
         
     }
     return(
-        <div className="login">
+        <div className="ilogin">
             <div className="text-container">
-                <h1 className="login-header">Welcome to your reimburement website </h1>
+                <h1 className="login-header"></h1>
                 <h2 className="login-header">Please sign in to submit a reimbursement</h2>
             </div>
             <form className="login-form">

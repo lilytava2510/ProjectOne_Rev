@@ -1,9 +1,13 @@
-import React, {useState} from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { RootState, AppDispatch } from "../../Store";
-import {writeReim} from "../../Slices/ReimSlice";
+//import { setDefaultResultOrder } from 'dns';
+import React, {useState, useEffect} from 'react';
+//import "./LoginForm.css";
+import { loginUser,toggleError, updateUser } from '../../Slices/UserSlice';
+import {RootState, AppDispatch} from "../../Store";
+import {useDispatch, useSelector} from "react-redux";
+import { ReimSlice, writeReim } from '../../Slices/ReimSlice';
+import './ReimCreate.css';
 
-export const ReimCreate: React.FC = () => {
+export const CreatePage: React.FC = () => {
 
     const [description, setDescription] = useState<string>("");
     const [amount, setAmount] = useState<any>();
@@ -67,15 +71,17 @@ export const ReimCreate: React.FC = () => {
             <form className="login-form">
             <div className="input-div">
                   <h4 className="input-h4">Enter Amount</h4>
-                    <input  className="amount" type="text" name="amount" placeholder="amount" onChange={handleInput}/>
+                    <input  className="login-input" type="text" name="amount" placeholder="amount" onChange={handleInput}/>
                 </div>
             <div className="input-div">
                <input type="radio" id="type1" name="type" value="1"onChange={handleInput}/>
-                     <label >lodging</label>
+                     <label className="input-h4">Lodging</label>
                    <input type="radio" id="2" name="type" value="2"onChange={handleInput}/>
-                    <label>food</label>
+                    <label className="input-h4" >Travel</label>
                     <input type="radio" id="3" name="type" value="3"onChange={handleInput}/>
-                    <label>travel</label>
+                    <label className="input-h4" >Food</label>
+                    <input type="radio" id="4" name="type" value="3"onChange={handleInput}/>
+                    <label className="input-h4" >Other</label>
                 </div>
                 <div className="input-div">
                   <h4 className="input-h4">Enter Description</h4>
@@ -83,7 +89,7 @@ export const ReimCreate: React.FC = () => {
                 </div>
                
             </form>
-                <button className="create-button" onClick={handleCreate}>Submit</button>
+                <button className="ilogout-btn" onClick={handleCreate}>Submit</button>
         </div>
     )
 }

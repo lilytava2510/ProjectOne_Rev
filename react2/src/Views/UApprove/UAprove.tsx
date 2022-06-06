@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect} from 'react';
 import {Navbar } from '../../Components/Navbar/Navbar';
 import { useSelector, useDispatch} from 'react-redux';
 import { RootState, AppDispatch}  from '../../Store';
@@ -7,9 +7,11 @@ import {Loading} from "../../Components/Loading/Loading";
 import {Reim} from "../../Components/Reim/Reim";
 import {IUser} from "../../Interface/IUser";
 import {IReim} from "../../Interface/IReim";
-import {allPendReim, allApproveReim} from "../../Slices/ReimSlice";
-import './ManagerPage.css';
-export const ManagerPage: React.FC = () => {
+import {getApproveReim} from "../../Slices/ReimSlice";
+import { CreatePage } from '../../Components/ReimCreate/ReimCreate';
+
+import '../FeedPage/FeedPage.css';
+export const AprovePage: React.FC = () => {
 
     const userInfo = useSelector((state:RootState) => state.user);
     const reimState = useSelector ((state :RootState) => state.reim);
@@ -20,11 +22,8 @@ export const ManagerPage: React.FC = () => {
           navigator("/login");
 
         }
-       else if(!userInfo.user.privilege){
-       navigator("/login")
-    }
-        else if(userInfo.user.privilege && !reimState.reimburse){
-            dispatch(allPendReim());
+        else if(userInfo.user && !reimState.reimburse){
+            dispatch(getApproveReim(userInfo.user.userId));
 
         }
     },[userInfo.user, reimState.reimburse]);
@@ -32,10 +31,10 @@ export const ManagerPage: React.FC = () => {
     return(
         <>
            <Navbar />
-           <h1 className="real"> Welcome Umpa Lumpa: {userInfo.user?.firstName}</h1>
-           <h2 className="real"> Pending Reimbursments </h2>
-           <table className="real">
-               <tr>
+           <h1 className="rei"> Welcome: {userInfo.user?.firstName}</h1>
+           <h2 className="rei"> Approved Reimbursements</h2>
+           <table className="reim">
+               <tr >
                    <th> #           </th>
                    <th>Amount       </th>
                    <th>Subimtion    </th>
@@ -52,6 +51,7 @@ export const ManagerPage: React.FC = () => {
             }): <Loading/>
         } 
            </table>
+           <CreatePage />
         </>
     )
 

@@ -7,6 +7,7 @@ import { UserElement } from "../../Components/UserElement/UserElement";
 import { IUser } from "../../Interface/IUser";
 import { Loading } from "../../Components/Loading/Loading";
 import { getPeople } from "../../Slices/UserSlice";
+import './InfoPage.css';
 
 export const InfoPage: React.FC = () => {
 
@@ -28,17 +29,17 @@ export const InfoPage: React.FC = () => {
         <>
 
            <Navbar />
-           <h1> Welcome: {userInfo.user?.firstName}</h1>
-           <h2> Page</h2>
-           <table>
+           <h1 className="page"> Welcome Umpa Lumpa: {userInfo.user?.firstName}</h1>
+           <h2 className="page"> Umpa Lumpas</h2>
+           <table className="info">
                <tr>
                    <th>User ID #</th>
                    <th>First Name</th>
                    <th>Last Name</th>
                    <th>Email</th>
                    <th>Username</th>
-                   <th>Password</th>
-                   <th>Manager</th>
+              
+                   
                </tr>
                     {userInfo.people?
                      userInfo.people.map((post:IUser)=> {

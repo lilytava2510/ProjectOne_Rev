@@ -26,7 +26,6 @@ export const ReimPage: React.FC = () => {
                 return <Reim {...post} />
             });
         } else {
-
         return (
             <Loading />
         )

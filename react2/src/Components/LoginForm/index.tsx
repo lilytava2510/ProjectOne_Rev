@@ -36,8 +36,10 @@ export const Login: React.FC = () => {
     return(
         <div className="login">
             <div className="text-container">
-                <h1 className="login-header">Welcome to your reimburement website </h1>
-                <h2 className="login-header">Please sign in to submit a reimbursement</h2>
+                <h1 className="login-header">Welcome to Willy Wonkas Chocolate Factory: </h1>
+                <h3 className="login-header">Where Umpa Lumpas can request a Reimbursement</h3>
+
+                <h2 className="login-header">Login </h2>
             </div>
             <form className="login-form">
                 <div className="input-div">

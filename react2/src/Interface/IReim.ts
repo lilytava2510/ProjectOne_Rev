@@ -12,4 +12,3 @@ export interface IReim {
     status?: number,
     type?: number
 }
-

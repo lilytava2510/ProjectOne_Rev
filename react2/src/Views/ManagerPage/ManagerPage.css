@@ -1,0 +1,21 @@
+:root {
+    --bg: #6C0BA9;
+    --dark: #DC9202;
+    --btn-blue: #b33000;
+    --accent: #FED000;
+    --text-white: #FBFBFB;
+}
+
+.reim {
+    text-align: center;
+    color:var(--dark);
+    
+   
+}
+.real {
+    text-align: center;
+    color:var(--dark);
+}
+.Feedpage {
+    background-color: #6C0BA9;
+}

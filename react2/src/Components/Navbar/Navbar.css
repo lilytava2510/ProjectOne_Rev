@@ -1,20 +1,78 @@
 :root {
-    --bg: #2D2E2E;
-    --dark: #0F0F0F;
-    --btn-blue: #3891A6;
-    --accent: #23CE6B;
-    --text-white: #FBFBFB;
-  }
+  --bg: #6C0BA9;
+  --dark: #DC9202;
+  --btn-blue: #b33000;
+  --accent: #FED000;
+  --text-white: #FBFBFB;
+}
 
-  .navbar {
-    background: var(--accent);
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1;
+.inavbar {
+  background: var(--accent);
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  color:var(--dark);
+}
+
+.inav-menu {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 10px;
+  list-style: none;
+  text-align: center;
+  width: 80%;
+  justify-content: end;
+  margin-right: 2rem;
+}
+
+.inav-item {
+  display: flex;
+  align-items: center;
+  height: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 8px;
+}
+
+.inav-link {
+  color: var(--dark);
+  font-size: 1.5rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ilogout-btn{
+  background-color: var(--btn-blue);
+  border: solid 2px var(--dark);
+  color: var(--dark);
+  font-weight: bold;
+  border-radius: 10px;
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.ilogout {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  outline: none;
+}
+
+.iprofile-pic {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  object-fit: cover;
 }
